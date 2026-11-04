@@ -22,7 +22,7 @@ const WIN = platform() === "win32";
 
 const run = (cmd, args) => {
   try {
-    return execFileSync(cmd, args, { encoding: "utf8", stdio: ["ignore", "pipe", "pipe"], timeout: 20000, shell: WIN }).trim();
+    return execFileSync(cmd, args, { encoding: "utf8", stdio: ["ignore", "pipe", "pipe"], timeout: 20000, shell: false, windowsHide: true }).trim();
   } catch (e) {
     return e.stdout ? String(e.stdout).trim() || null : null;
   }
