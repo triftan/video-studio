@@ -42,7 +42,7 @@ add("node", nodeV && nodeV[0] >= 18, `Node ${process.versions.node}`,
 // ffmpeg + libass (needed to burn styled captions)
 const ff = run("ffmpeg", ["-hide_banner", "-version"]);
 const hasLibass = !!(ff && ff.includes("--enable-libass"));
-const fixFfmpeg = platform() === "darwin" ? "brew install ffmpeg"
+const fixFfmpeg = platform() === "darwin" ? "brew install ffmpeg-full"
   : WIN ? "winget install --id Gyan.FFmpeg -e   (then open a new terminal)"
   : "sudo apt install ffmpeg   (or your distro's package)";
 add("ffmpeg", !!ff, ff ? firstLine(ff) : "not found", fixFfmpeg);

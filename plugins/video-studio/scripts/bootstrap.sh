@@ -61,6 +61,7 @@ check() {
   else need ffmpeg "video cutting, captions, export"; fi
   if have uv || have python3; then ok python "$(uv --version 2>/dev/null || python3 --version 2>&1)"; else need python "Python (installed through uv)"; fi
   if venv_ok; then ok python-env "$VS/venv"; else need python-env "effects, tracking and transcription packages"; fi
+  if egl_ok; then :; else need egl "graphics library used by face tracking (libEGL)"; fi
   if [ "$DO_WS" = 1 ]; then
     if ws_ok; then ok workspace "$WORKSPACE"; else need workspace "Remotion workspace at $WORKSPACE"; fi
   fi
@@ -90,8 +91,14 @@ install_ffmpeg() {
   ffmpeg_ok && return 0
   if [ "$OS" = Darwin ]; then
     if have brew; then
-      say "→ brew install ffmpeg (a few minutes) ..."
-      brew install ffmpeg >/dev/null 2>&1 || brew install ffmpeg
+      # Homebrew's plain "ffmpeg" formula is built without libass (needed for captions); "ffmpeg-full" has it.
+      say "→ brew install ffmpeg-full (a few minutes) ..."
+      brew install ffmpeg-full >/dev/null 2>&1 || brew install ffmpeg-full
+      fp=$(brew --prefix ffmpeg-full 2>/dev/null)
+      if [ -n "$fp" ] && [ -x "$fp/bin/ffmpeg" ]; then
+        ln -sf "$fp/bin/ffmpeg" "$VS/bin/ffmpeg"
+        ln -sf "$fp/bin/ffprobe" "$VS/bin/ffprobe"
+      fi
     else
       MANUAL="$MANUAL\n- Install Homebrew (it needs your Mac password, so run it yourself in the Terminal app):\n    /bin/bash -c \"\$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)\"\n  then come back and say \"done\" so setup can install ffmpeg."
       return 1
@@ -112,6 +119,17 @@ install_ffmpeg() {
     fi
   fi
   ffmpeg_ok && say "  ✓ ffmpeg ready"
+}
+
+egl_ok() { [ "$OS" != Linux ] || ldconfig -p 2>/dev/null | grep -q 'libEGL.so.1' || ls /usr/lib/*/libEGL.so.1 /usr/lib64/libEGL.so.1 >/dev/null 2>&1; }
+
+install_egl() {
+  egl_ok && return 0
+  if have apt-get && sudo -n true 2>/dev/null; then
+    say "→ apt-get install libegl1 libgles2 (needed by face tracking) ..."
+    sudo -n apt-get update -qq && sudo -n apt-get install -y -qq libegl1 libgles2 libgl1 >/dev/null
+  fi
+  egl_ok || MANUAL="$MANUAL\n- Face tracking needs the EGL graphics library: run  sudo apt install libegl1 libgles2  (or your distro's equivalent)"
 }
 
 install_python() {
@@ -180,6 +198,7 @@ fi
 say ""
 install_node
 install_ffmpeg
+install_egl
 install_python
 install_workspace
 add_path
