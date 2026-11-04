@@ -1,6 +1,6 @@
 # Style library
 
-Everything here is plain JSON, so any skill, script or tool can read it. Browse it visually in `catalog/index.html` (`/video-studio:catalog`).
+Everything here is plain JSON, so any skill, script or tool can read it. Effects, zooms, grades, transitions and audio effects are applied by name with `skills/video-effects/scripts/`. Browse it visually in `catalog/index.html` (`/video-studio:catalog`).
 
 ## Caption presets (`caption-presets.json`)
 

@@ -85,6 +85,12 @@ The style library lives in `../../styles/` (index: `../../styles/STYLES.md`).
 - **Zooms:** `zoom-presets.json` (slow push, slow pull, instant punch, and more).
 - **Effects:** `pixel-effects.json` is a menu of 83 effect ideas with parameters (face zoom, tilt-shift, CRT, glow, laser eyes, letterbox). Rebuild them with ffmpeg filters or Remotion when needed.
 
+## Effects, transitions and audio by name
+
+Named video effects (Laser Eyes, Glow, Tilt-Shift...), zoom presets, color grades, the 30 transitions and the 22 audio effects are applied with the `video-effects` skill's scripts. Use its `transitions.py` to join clips and `audio_fx.py` for the audio chain instead of hand-writing ffmpeg filters.
+
+Python scripts that need packages (transcription, effects) run with the plugin's environment: `~/.video-studio/venv/bin/python` (Windows: `%USERPROFILE%\.video-studio\venv\Scripts\python.exe`).
+
 ## When to hand off
 
 - Animated titles, lower thirds, charts, logo reveals or animated captions: use the `motion-graphics` skill.

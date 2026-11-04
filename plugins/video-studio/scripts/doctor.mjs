@@ -48,13 +48,22 @@ const pyV = version(py);
 add("python", !!(pyV && (pyV[0] > 3 || (pyV[0] === 3 && pyV[1] >= 9))), py || "not found",
   platform() === "darwin" ? "brew install python" : WIN ? "winget install Python.Python.3.12" : "sudo apt install python3 python3-pip");
 
-// Optional Python packages
-const pyBin = WIN ? "python" : "python3";
+// Private Python environment for the plugin's scripts (avoids "externally managed" errors on macOS/Linux)
+const sysPy = WIN ? "python" : "python3";
+const VENV = join(STATE_DIR, "venv");
+const venvPy = WIN ? join(VENV, "Scripts", "python.exe") : join(VENV, "bin", "python");
+const hasVenv = existsSync(venvPy);
+const pyBin = hasVenv ? venvPy : sysPy;
+const pip = `"${venvPy}" -m pip install`;
+const effectsReq = join(PLUGIN_ROOT, "skills", "video-effects", "requirements.txt");
+add("python-venv", hasVenv, hasVenv ? `ready at ${VENV}` : "not created yet",
+  `${sysPy} -m venv "${VENV}"`);
 const hasPkg = (mod) => run(pyBin, ["-c", `import ${mod}; print('ok')`]) === "ok";
-add("faster-whisper", hasPkg("faster_whisper"), "word timestamps for captions",
-  `${pyBin} -m pip install faster-whisper`, false);
-add("kokoro (free offline voice)", hasPkg("kokoro_onnx"), "fallback voiceover when Fish Audio credits run out",
-  `${pyBin} -m pip install kokoro-onnx soundfile`, false);
+add("video-effects (mediapipe, opencv)", hasVenv && hasPkg("mediapipe") && hasPkg("cv2") && hasPkg("PIL"),
+  "needed for the 83 video effects, zooms and color grades", `${pip} -r "${effectsReq}"`);
+add("faster-whisper", hasVenv && hasPkg("faster_whisper"), "word timestamps for captions", `${pip} faster-whisper`, false);
+add("kokoro (free offline voice)", hasVenv && hasPkg("kokoro_onnx"), "fallback voiceover when Fish Audio credits run out",
+  `${pip} kokoro-onnx soundfile`, false);
 
 // Remotion workspace
 let state = {};
@@ -71,6 +80,7 @@ const report = {
   state_file: STATE_FILE,
   workspace: ws,
   catalog: join(PLUGIN_ROOT, "catalog", "index.html"),
+  python: pyBin,
   checks,
   missing_required: checks.filter((c) => c.required && !c.ok).map((c) => c.id),
 };

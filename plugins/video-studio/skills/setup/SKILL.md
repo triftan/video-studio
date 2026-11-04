@@ -24,6 +24,8 @@ For each failed **required** check, offer to run its `fix` command, and wait for
 - Windows: after `winget` installs ffmpeg or Python, the user must open a **new** terminal or restart Claude Code before the new commands are found.
 - If an install needs `sudo` or an admin prompt, explain that the computer will ask for their password.
 
+Python packages go into a private environment at `~/.video-studio/venv` (the doctor's `python-venv` check), so nothing touches the system Python and macOS/Linux "externally managed environment" errors don't happen. Create it with the `python-venv` fix, then install the effect libraries with the `video-effects` fix (MediaPipe, OpenCV, NumPy, Pillow; about 2 minutes). From then on, run every plugin Python script with the doctor's `python` path.
+
 Optional checks:
 - `faster-whisper`: recommended (accurate word timings for captions). Offer to install it.
 - `kokoro`: a free offline voice for when Fish Audio credits run out. Offer it, and mention it downloads about 350 MB of model files on first use.
@@ -42,6 +44,10 @@ Motion graphics and explainers render in a small Node project. Ask where to put 
    cd <workspace> && npx remotion still src/index.ts KineticTitle out/setup-check.png --frame=45
    ```
    The first run downloads a headless Chrome automatically. Open or show the PNG so the user sees it worked.
+
+### Check the effects engine
+
+Run `"<python>" "<plugin>/skills/video-effects/scripts/apply_effects.py" --list` (where `<python>` is the doctor's `python` value). It should list 83 effects. Tracking models (about 37 MB) download automatically the first time an effect needs them.
 
 ## 3. Connect Fish Audio (voiceovers)
 
@@ -74,6 +80,7 @@ If they don't want Fish Audio, that's fine: Kokoro (free, offline) or the user's
    - "Cut the silences from ~/Desktop/talk.mp4 and add tiktok captions."
    - "Make a 30-second 9:16 explainer about the water cycle in the edu-chalk style, voiced by Fish voice Ethan."
    - "Add a NumberCounter showing 12,400 subscribers to the top right of my video."
+   - "Add Laser Eyes from 0:03 to 0:06 and a slow push zoom at the end of ~/Desktop/talk.mp4."
 
 Remind them they can reopen the catalog any time with `/video-studio:catalog`.
 

@@ -29,11 +29,26 @@ CORE = [
 ]
 
 
+def effect_needs():
+    """What each effect tracks, read from the effect engine's source (no imports needed)."""
+    import re
+    src = open(os.path.join(P, "skills", "video-effects", "scripts", "fxlib.py"), encoding="utf-8").read()
+    bodies = {m.group(1): m.group(2) for m in re.finditer(r"^def (\w+)\(.*?\):\n(.*?)(?=^def |^[A-Z_]+ = |\Z)", src, re.S | re.M)}
+    table = dict(re.findall(r'"([^"]+)": (fx_\w+)', src[src.index("EFFECTS = {"):]))
+    out = {}
+    for name, fn in table.items():
+        body = bodies.get(fn, "") + (bodies.get("eye_beams", "") if "eye_beams" in bodies.get(fn, "") else "")
+        needs = [k for k, toks in (("face", ("c.face",)), ("hands", ("c.hands",)), ("pose", ("c.pose",)), ("seg", ("c.cat", "c.person"))) if any(t in body for t in toks)]
+        out[name] = needs
+    return out
+
+
 def build_data():
     lib = json.load(open(os.path.join(P, "skills", "motion-graphics", "templates", "src", "library", "catalog.json"), encoding="utf-8"))["templates"]
     core = [dict(c, core=True) for c in CORE]
     lib = [{k: v for k, v in dict(c, core=False).items() if k != "file"} for c in lib]
-    eff = [{"name": e["name"], "category": e.get("category"), "description": e.get("description"), "params": len(e.get("properties") or [])}
+    needs = effect_needs()
+    eff = [{"name": e["name"], "category": e.get("category"), "description": e.get("description"), "params": len(e.get("properties") or []), "needs": needs.get(e["name"], [])}
            for e in st("pixel-effects.json")["effects"]]
     tr = [{"name": t["name"], "description": t.get("description") or ""} for t in st("transitions.json")["transitions"]]
     au = st("audio-effects.json")
