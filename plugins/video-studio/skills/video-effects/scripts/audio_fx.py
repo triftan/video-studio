@@ -8,10 +8,15 @@ Usage
 
 Effects run in the order given. Video (if any) is copied untouched.
 """
+import os
 import argparse
 import json
 import subprocess
 from pathlib import Path
+
+# Tools installed by the plugin's bootstrap live in ~/.video-studio/bin (ffmpeg on Linux) and ~/.local/bin (uv).
+os.environ["PATH"] = os.pathsep.join([str(Path.home() / ".video-studio" / "bin"), str(Path.home() / ".local" / "bin"),
+                                      os.environ.get("PATH", "")])
 
 STYLES = Path(__file__).resolve().parents[3] / "styles"
 

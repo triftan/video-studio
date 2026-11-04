@@ -8,6 +8,7 @@ Usage
 
 Best with a clip of one person facing the camera, with hands visible for a few seconds.
 """
+import os
 import argparse
 import json
 import subprocess
@@ -23,6 +24,10 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 import fxlib  # noqa: E402
 from apply_effects import Ctx, Tracker, effect_catalog, find  # noqa: E402
+
+# Tools installed by the plugin's bootstrap live in ~/.video-studio/bin (ffmpeg on Linux) and ~/.local/bin (uv).
+os.environ["PATH"] = os.pathsep.join([str(Path.home() / ".video-studio" / "bin"), str(Path.home() / ".local" / "bin"),
+                                      os.environ.get("PATH", "")])
 
 CAT_COL = {"effect": (255, 196, 61), "zoom": (95, 205, 255), "mask": (120, 240, 160), "lut": (255, 140, 200)}
 

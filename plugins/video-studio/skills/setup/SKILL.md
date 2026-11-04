@@ -1,6 +1,6 @@
 ---
 name: setup
-description: One-time setup for the video-studio plugin on this computer. Checks ffmpeg, Node and Python, prepares the Remotion workspace, connects the Fish Audio voiceover connector and opens the style catalog. Use when the user runs /video-studio:setup, asks to set up or repair video-studio, or a video task fails because a tool is missing.
+description: One-time setup for the video-studio plugin on this computer. Automatically installs every missing dependency (Node.js, ffmpeg, Python packages, Remotion workspace) after one confirmation, connects the Fish Audio voiceover connector and opens the style catalog. Use when the user runs /video-studio:setup, asks to set up or repair video-studio, or a video task fails because a tool is missing.
 ---
 
 # video-studio setup
@@ -9,45 +9,30 @@ Get this computer ready in one pass, then never again. Talk to the user like a f
 
 Paths: this skill lives in `skills/setup/` inside the plugin, so the **plugin root** is two folders up from this file's base directory. Below, `<plugin>` means that absolute path.
 
-## 1. Check the machine
+## 1. Install every dependency (one confirmation)
 
-Run:
+Nothing else in the plugin works until this is done, so do it first, before any video request.
 
-```bash
-node "<plugin>/scripts/doctor.mjs"
-```
+1. **Check.** Run the bootstrap in check mode. It needs only `sh` and `curl` (macOS/Linux) or PowerShell (Windows), so it works on a brand-new computer with no Node.js or Python:
+   - macOS / Linux: `sh "<plugin>/scripts/bootstrap.sh"`
+   - Windows: `powershell -ExecutionPolicy Bypass -File "<plugin>\scripts\bootstrap.ps1"`
+   It prints ✓/✗ for Node.js, ffmpeg, the Python environment and the Remotion workspace. Exit 0 means all present: skip to step 2.
+2. **Ask once.** Show the missing items as a short list in plain words, say it installs them in the user's home folder (about 5 to 10 minutes, roughly 1 GB), and ask a single question: "Shall I install these now?" Default the Remotion workspace to `~/video-studio`; mention they can choose another folder.
+3. **Install everything in one go** after a yes. Run the same script with `--install` (Windows: `-Install`). Add `--workspace=<dir>` (Windows: `-Workspace <dir>`) if they chose another folder, and `--with-kokoro` (`-WithKokoro`) only if they want the free offline voice. If they chose another folder, record it afterwards with `node "<plugin>/scripts/doctor.mjs" --workspace=<absolute path>`. Use a generous timeout (15 minutes). Tell them what is happening while it runs ("Installing Node.js... ffmpeg... Python packages...").
+4. **Exit code 2 = one manual step.** The script prints it. Usually it's Homebrew on a Mac without it (needs the Mac password, so the student pastes the printed command into the Terminal app), or a Windows prompt they need to click Yes on. Explain it simply, wait for "done", then run `--install` again. It skips anything already installed.
+5. **Confirm.** Run the check again; everything should show ✓. If something still fails, read the script's output, fix that one item and rerun. Don't loop more than twice; tell the user what's left and how to get help.
 
-It prints JSON with `checks` (each has `ok`, `required`, `detail`, `fix`) and `missing_required`. Show the user a short checklist (✓ / ✗) instead of the raw JSON.
+Notes: a freshly installed Node.js is not on this session's PATH until Claude Code restarts. Until then call it by full path: `~/.video-studio/node/bin/node` and `~/.video-studio/node/bin/npx` (Windows: winget's Node is found after the script refreshes PATH, else restart). Node.js and ffmpeg (Linux) go into `~/.video-studio`, Python is managed by `uv` in `~/.video-studio/venv`, and the script adds those folders to the PATH for future sessions. Run every plugin Python script with the venv's Python (`~/.video-studio/venv/bin/python`; Windows `%USERPROFILE%\.video-studio\venv\Scripts\python.exe`).
 
-For each failed **required** check, offer to run its `fix` command, and wait for a yes before installing anything. Notes:
-- macOS without Homebrew: install it first from https://brew.sh (the user runs the one-line installer; it asks for their password).
-- Windows: after `winget` installs ffmpeg or Python, the user must open a **new** terminal or restart Claude Code before the new commands are found.
-- If an install needs `sudo` or an admin prompt, explain that the computer will ask for their password.
+## 2. Verify
 
-Python packages go into a private environment at `~/.video-studio/venv` (the doctor's `python-venv` check), so nothing touches the system Python and macOS/Linux "externally managed environment" errors don't happen. Create it with the `python-venv` fix, then install the effect libraries with the `video-effects` fix (MediaPipe, OpenCV, NumPy, Pillow; about 2 minutes). From then on, run every plugin Python script with the doctor's `python` path.
-
-Optional checks:
-- `faster-whisper`: recommended (accurate word timings for captions). Offer to install it.
-- `kokoro`: a free offline voice for when Fish Audio credits run out. Offer it, and mention it downloads about 350 MB of model files on first use.
-
-Re-run the doctor after fixes until `missing_required` only contains `remotion-workspace`.
-
-## 2. Create the Remotion workspace
-
-Motion graphics and explainers render in a small Node project. Ask where to put it and default to `~/video-studio` (the doctor's `workspace` value). Then:
-
-1. Copy `<plugin>/skills/motion-graphics/templates/` into that folder (skip `node_modules` if present). If the folder exists and already has a `package.json`, ask before overwriting.
-2. Run `npm install` there (about 1 to 2 minutes).
-3. Record the location: `node "<plugin>/scripts/doctor.mjs" --workspace=<absolute path>`.
-4. Prove rendering works by rendering one still:
+1. Run `node "<plugin>/scripts/doctor.mjs"` (Node is installed now). Show a short ✓/✗ checklist instead of the raw JSON; `missing_required` should be empty.
+2. Prove rendering works with one still:
    ```bash
-   cd <workspace> && npx remotion still src/index.ts KineticTitle out/setup-check.png --frame=45
+   cd ~/video-studio && npx remotion still src/index.ts KineticTitle out/setup-check.png --frame=45
    ```
-   The first run downloads a headless Chrome automatically. Open or show the PNG so the user sees it worked.
-
-### Check the effects engine
-
-Run `"<python>" "<plugin>/skills/video-effects/scripts/apply_effects.py" --list` (where `<python>` is the doctor's `python` value). It should list 83 effects. Tracking models (about 37 MB) download automatically the first time an effect needs them.
+   The first run downloads a headless Chrome automatically. Show the PNG so they see it worked.
+3. Check the effects engine: `"<venv python>" "<plugin>/skills/video-effects/scripts/apply_effects.py" --list` should list 83 effects. Tracking models (37 MB) download the first time an effect needs them.
 
 ## 3. Connect Fish Audio (voiceovers)
 
@@ -86,4 +71,4 @@ Remind them they can reopen the catalog any time with `/video-studio:catalog`.
 
 ## Repair mode
 
-If setup already ran (`setup_done: true` in the doctor output), only fix what the doctor reports as failing, then re-open the catalog if they want it. Never delete their workspace.
+If setup already ran (`setup_done: true` in the doctor output), rerun the bootstrap with `--install` to fix anything missing (it skips what is installed), then re-open the catalog if they want it. Never delete their workspace.

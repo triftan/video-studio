@@ -9,9 +9,15 @@ EDL entries: {"src": "a.mp4", "in": 1.2, "out": 5.8, "zoom": 1.0 (optional), "no
 --zoom-alternate punches every other segment in by that factor to hide jump cuts.
 Audio gets a short fade at every cut so there are no clicks.
 """
+import os
+from pathlib import Path
 import argparse
 import json
 import subprocess
+
+# Tools installed by the plugin's bootstrap live in ~/.video-studio/bin (ffmpeg on Linux) and ~/.local/bin (uv).
+os.environ["PATH"] = os.pathsep.join([str(Path.home() / ".video-studio" / "bin"), str(Path.home() / ".local" / "bin"),
+                                      os.environ.get("PATH", "")])
 
 
 def main():

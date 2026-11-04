@@ -6,10 +6,16 @@ Usage:
 
 Output: [{"src": "input.mp4", "in": 0.0, "out": 4.21, "note": "speech"}, ...]
 """
+import os
+from pathlib import Path
 import argparse
 import json
 import re
 import subprocess
+
+# Tools installed by the plugin's bootstrap live in ~/.video-studio/bin (ffmpeg on Linux) and ~/.local/bin (uv).
+os.environ["PATH"] = os.pathsep.join([str(Path.home() / ".video-studio" / "bin"), str(Path.home() / ".local" / "bin"),
+                                      os.environ.get("PATH", "")])
 
 
 def media_duration(path):

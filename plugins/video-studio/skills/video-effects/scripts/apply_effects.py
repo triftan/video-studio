@@ -32,6 +32,10 @@ sys.path.insert(0, str(HERE))
 import fxlib  # noqa: E402
 import looks  # noqa: E402
 
+# Tools installed by the plugin's bootstrap live in ~/.video-studio/bin (ffmpeg on Linux) and ~/.local/bin (uv).
+os.environ["PATH"] = os.pathsep.join([str(Path.home() / ".video-studio" / "bin"), str(Path.home() / ".local" / "bin"),
+                                      os.environ.get("PATH", "")])
+
 MODEL_DIR = Path.home() / ".video-studio" / "models"
 MODELS = {
     "face": "https://storage.googleapis.com/mediapipe-models/face_landmarker/face_landmarker/float16/latest/face_landmarker.task",

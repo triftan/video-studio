@@ -16,23 +16,18 @@ The plugin also bundles the **Fish Audio connector** (`https://api.fish.audio/mc
 
 ## For students: get started
 
-1. **Install the prerequisites** (once per computer). Setup checks these and tells you exactly what's missing:
-   - [Claude Code](https://code.claude.com) with a Claude Pro or Max plan, or an API key
-   - [Node.js](https://nodejs.org) 18 or newer (LTS)
-   - [Python](https://www.python.org/downloads/) 3.9 or newer
-   - ffmpeg: `brew install ffmpeg` (macOS), `winget install --id Gyan.FFmpeg -e` (Windows) or `sudo apt install ffmpeg` (Linux)
-   - A free [Fish Audio](https://fish.audio) account for voiceovers
-   - About 1 GB of disk space for the Remotion workspace, Python packages and tracking models
+1. **Have Claude Code** with a Claude Pro or Max plan (or an API key), a free [Fish Audio](https://fish.audio) account for voiceovers, and about 1 GB of free disk space. That's all you install yourself.
 2. **Install the plugin** in Claude Code:
    ```
    /plugin marketplace add triftan/video-studio
    /plugin install video-studio@video-studio
    ```
-3. **Restart Claude Code.** You'll get a reminder to run setup. Run:
-   ```
-   /video-studio:setup
-   ```
-   Setup takes about 5 to 10 minutes. It installs what's missing (asking first), creates a private Python environment in `~/.video-studio/venv` with the effect libraries, creates a workspace in `~/video-studio`, test-renders a frame, walks you through signing in to Fish Audio (`/mcp` → **fish-audio** → **Authenticate**) and opens the catalog. The reminder stops once setup is done.
+3. **Restart Claude Code.** Claude will offer the one-time setup. Say yes (or run `/video-studio:setup`). It checks your computer and, after one confirmation, installs everything missing for you:
+   - Node.js, ffmpeg and Python (through `uv`), mostly into your home folder, no admin rights needed
+   - a private Python environment in `~/.video-studio/venv` with the effect and transcription libraries
+   - the Remotion workspace in `~/video-studio`
+
+   Then it test-renders a frame, walks you through signing in to Fish Audio (`/mcp` → **fish-audio** → **Authenticate**) and opens the catalog. About 5 to 10 minutes. The only possible manual step: on a Mac without Homebrew, you paste one command into the Terminal app (it needs your Mac password), and on Windows you may click **Yes** on an install prompt.
 4. **Ask for a video.** For example:
    - "Cut the silences from ~/Desktop/talk.mp4 and add tiktok captions."
    - "Make a 30-second 9:16 explainer about the water cycle in the edu-chalk style, voiced by Fish voice Ethan."
@@ -67,4 +62,5 @@ Some caption presets use fonts that aren't on Google Fonts (Xinqingnian Ti, Harm
 
 - `scripts/doctor.mjs` checks the computer and prints a JSON report. `--workspace=<path>` records the workspace, and `--mark-done` records that setup finished.
 - State lives in `~/.video-studio/setup.json`. Delete it to see the setup reminder again, or create an empty `~/.video-studio/skip` to silence it without running setup.
-- `hooks/check-setup.mjs` runs at session start and only speaks up while setup is unfinished.
+- `hooks/check-setup.sh` runs at session start (plain `sh`, so it works before anything is installed) and asks Claude to offer setup until it has finished.
+- `scripts/bootstrap.sh` (macOS/Linux) and `scripts/bootstrap.ps1` (Windows) install the dependencies; run them with no arguments to check, or with `--install` / `-Install`.

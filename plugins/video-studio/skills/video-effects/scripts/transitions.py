@@ -10,10 +10,15 @@ Usage
 Audio is crossfaded with the matching audio transition (default "Constant Power"); use --audio-transition to choose.
 Clips are scaled/padded to the first clip's size and frame rate.
 """
+import os
 import argparse
 import json
 import subprocess
 from pathlib import Path
+
+# Tools installed by the plugin's bootstrap live in ~/.video-studio/bin (ffmpeg on Linux) and ~/.local/bin (uv).
+os.environ["PATH"] = os.pathsep.join([str(Path.home() / ".video-studio" / "bin"), str(Path.home() / ".local" / "bin"),
+                                      os.environ.get("PATH", "")])
 
 STYLES = Path(__file__).resolve().parents[3] / "styles"
 

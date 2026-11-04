@@ -12,6 +12,13 @@ const PLUGIN_ROOT = process.env.CLAUDE_PLUGIN_ROOT || join(dirname(fileURLToPath
 const STATE_DIR = join(homedir(), ".video-studio");
 const STATE_FILE = join(STATE_DIR, "setup.json");
 const WIN = platform() === "win32";
+// Tools installed by bootstrap live in the home folder; find them even before a restart picks up the new PATH.
+{
+  const sep = WIN ? ";" : ":";
+  const extra = [join(homedir(), ".video-studio", "bin"), join(homedir(), ".video-studio", "node", WIN ? "" : "bin"),
+    join(homedir(), ".local", "bin"), "/opt/homebrew/bin", "/usr/local/bin"];
+  process.env.PATH = extra.join(sep) + sep + (process.env.PATH || "");
+}
 
 const run = (cmd, args) => {
   try {
@@ -29,7 +36,8 @@ const add = (id, ok, detail, fix, required = true) => checks.push({ id, ok, requ
 // Node
 const nodeV = version(process.versions.node);
 add("node", nodeV && nodeV[0] >= 18, `Node ${process.versions.node}`,
-  "Install Node.js 18 or newer from https://nodejs.org (LTS).");
+  WIN ? `powershell -ExecutionPolicy Bypass -File "${join(PLUGIN_ROOT, "scripts", "bootstrap.ps1")}" -Install`
+      : `sh "${join(PLUGIN_ROOT, "scripts", "bootstrap.sh")}" --install`);
 
 // ffmpeg + libass (needed to burn styled captions)
 const ff = run("ffmpeg", ["-hide_banner", "-version"]);
@@ -81,6 +89,8 @@ const report = {
   workspace: ws,
   catalog: join(PLUGIN_ROOT, "catalog", "index.html"),
   python: pyBin,
+  bootstrap: WIN ? `powershell -ExecutionPolicy Bypass -File "${join(PLUGIN_ROOT, "scripts", "bootstrap.ps1")}" -Install`
+                 : `sh "${join(PLUGIN_ROOT, "scripts", "bootstrap.sh")}" --install`,
   checks,
   missing_required: checks.filter((c) => c.required && !c.ok).map((c) => c.id),
 };
