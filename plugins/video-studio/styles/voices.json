@@ -1,0 +1,777 @@
+{
+  "_about": "Voiceover voice picks. Fish Audio entries are official Fish voices for the bundled Fish Audio MCP (text_to_speech voice_id). ElevenLabs entries use public voice-library IDs. Doubao entries are Volcano Engine speakers (Chinese/Japanese).",
+  "voices": {
+    "fish": {
+      "sarah": {
+        "label": "Sarah",
+        "voiceId": "933563129e564b19a115bedd57b7406a",
+        "description": "Soft, sincere young female narrator. Explainers, tutorials, calm social videos.",
+        "tags": [
+          "female",
+          "young",
+          "narration",
+          "gentle"
+        ]
+      },
+      "ethan": {
+        "label": "Ethan",
+        "voiceId": "536d3a5e000945adb7038665781a4aca",
+        "description": "Clear, calm, authoritative male narrator. Educational and documentary explainers.",
+        "tags": [
+          "male",
+          "middle-aged",
+          "educational",
+          "documentary"
+        ]
+      },
+      "adrian": {
+        "label": "Adrian",
+        "voiceId": "bf322df2096a46f18c579d0baa36f41d",
+        "description": "Deep, slow, dramatic male storyteller. Trailers, stories, cinematic intros.",
+        "tags": [
+          "male",
+          "middle-aged",
+          "deep",
+          "storytelling"
+        ]
+      },
+      "selene": {
+        "label": "Selene",
+        "voiceId": "b347db033a6549378b48d00acb0d06cd",
+        "description": "Calm, intimate female voice. Meditative, wellness and slow-paced content.",
+        "tags": [
+          "female",
+          "middle-aged",
+          "calm",
+          "soft"
+        ]
+      }
+    },
+    "elevenlabs": {
+      "amelia": {
+        "label": "Amelia",
+        "voiceId": "ZF6FPAbjXT4488VcRRnw",
+        "description": "Best for clear story reads, podcast intros, reels, and ads that need enthusiastic delivery. English-source accent: British.",
+        "tags": [
+          "female",
+          "young",
+          "upbeat",
+          "narrative-story",
+          "social-media"
+        ]
+      },
+      "brittney": {
+        "label": "Brittney",
+        "voiceId": "kPzsL2i3teMYv0FxEYQ6",
+        "description": "Best for creator videos, celebrity/news recaps, hot-topic commentary, and how-to clips with a lively presenter feel. English-source accent: American.",
+        "tags": [
+          "female",
+          "young",
+          "upbeat",
+          "social-media",
+          "fun"
+        ]
+      },
+      "hope": {
+        "label": "Hope",
+        "voiceId": "tnSpp4vdxKPjI9w0GnoV",
+        "description": "Best for crisp short-form narration, quick explainers, and social reads where clarity matters more than drama. English-source accent: American.",
+        "tags": [
+          "female",
+          "young",
+          "upbeat",
+          "clear",
+          "social-media"
+        ]
+      },
+      "jessica": {
+        "label": "Jessica",
+        "voiceId": "lxYfHSkYm1EzQzGhdbfc",
+        "description": "Best when a VO needs to feel composed and direct: narration, story reads, and confident product copy. English-source accent: American.",
+        "tags": [
+          "female",
+          "middle-aged",
+          "calm",
+          "conversational",
+          "narrative-story"
+        ]
+      },
+      "arabella": {
+        "label": "Arabella",
+        "voiceId": "Z3R5wn05IrDiVCyEkUrK",
+        "description": "Best for fantasy, romance, wellness, and atmospheric stories that need mystery and feeling. English-source accent: American.",
+        "tags": [
+          "female",
+          "young",
+          "gentle",
+          "emotive",
+          "narrative-story"
+        ]
+      },
+      "jane": {
+        "label": "Jane",
+        "voiceId": "RILOU7YmBhvwJGDGjNmP",
+        "description": "Best for long-form book pacing, classic narration, and steady story delivery. English-source accent: British.",
+        "tags": [
+          "female",
+          "old",
+          "professional",
+          "audiobook",
+          "narrative-story"
+        ]
+      },
+      "maria": {
+        "label": "Maria",
+        "voiceId": "wGcFBfKz5yUQqhqr0mVy",
+        "description": "Best for grandmother-style narration, gentle mature characters, and calm reflective story delivery. English-source accent: American.",
+        "tags": [
+          "female",
+          "old",
+          "calm",
+          "grandmother",
+          "narrative-story"
+        ]
+      },
+      "mark": {
+        "label": "Mark",
+        "voiceId": "UgBBYS2sOqTuMpoF3BR0",
+        "description": "Best for dialogue, assistant-style replies, and informal scripts where back-and-forth flow matters more than announcer polish. English-source accent: American.",
+        "tags": [
+          "male",
+          "young",
+          "casual",
+          "conversational",
+          "natural"
+        ]
+      },
+      "frederick": {
+        "label": "Frederick",
+        "voiceId": "j9jfwdrw7BRfcR43Qohk",
+        "description": "Best for history, science, mystery, and factual films that need a measured, well-spoken read. English-source accent: British.",
+        "tags": [
+          "male",
+          "middle-aged",
+          "calm",
+          "documentary",
+          "narrative-story"
+        ]
+      },
+      "peter": {
+        "label": "Peter",
+        "voiceId": "ZthjuvLPty3kTMaNKVKb",
+        "description": "Best for trustworthy narration, explainers, and brand reads where reliability matters more than theatrical delivery. English-source accent: American.",
+        "tags": [
+          "male",
+          "middle-aged",
+          "confident",
+          "credible",
+          "narrative-story"
+        ]
+      },
+      "james": {
+        "label": "James",
+        "voiceId": "EkK5I93UQWFDigLMpZcX",
+        "description": "Best for controlled, direct reads with a heavier texture: audiobooks, story narration, and professional voiceover. English-source accent: American.",
+        "tags": [
+          "male",
+          "middle-aged",
+          "deep",
+          "husky",
+          "narrative-story"
+        ]
+      },
+      "jon": {
+        "label": "Jon",
+        "voiceId": "MFZUKuGQUsGJPQjTS4wC",
+        "description": "Best for clear messaging, commercials, and narration where the speaker should feel anchored and trustworthy. English-source accent: American.",
+        "tags": [
+          "male",
+          "middle-aged",
+          "calm",
+          "grounded",
+          "narrative-story"
+        ]
+      },
+      "sully": {
+        "label": "Sully",
+        "voiceId": "wAGzRVkxKEs8La0lmdrE",
+        "description": "Best for deep elderly narration, reflective storytelling, and warm authoritative reads with a seasoned feel. English-source accent: American.",
+        "tags": [
+          "male",
+          "old",
+          "deep",
+          "storyteller",
+          "narrative-story"
+        ]
+      },
+      "david": {
+        "label": "David",
+        "voiceId": "BNgbHR0DNeZixGQVzloa",
+        "description": "Best for deep old-male story narration, classic audiobook passages, and grounded dramatic reads. English-source accent: British.",
+        "tags": [
+          "male",
+          "old",
+          "deep",
+          "storyteller",
+          "narrative-story"
+        ]
+      },
+      "alex": {
+        "label": "Alex",
+        "voiceId": "yl2ZDV1MzN4HbQJbMihG",
+        "description": "Best for YouTube, shorts, and entertainment clips that need pleasant presenter energy without sounding formal. English-source accent: American.",
+        "tags": [
+          "male",
+          "young",
+          "confident",
+          "entertainment-tv",
+          "social-media"
+        ]
+      }
+    },
+    "doubao": {
+      "vivi": {
+        "englishLabel": "Vivi",
+        "speaker": "zh_female_vv_uranus_bigtts",
+        "description": "Friendly, natural Mandarin female voice for everyday Chinese narration, product intros, and short explainers.",
+        "languages": [
+          "zh",
+          "ja"
+        ],
+        "tags": [
+          "female",
+          "young",
+          "friendly",
+          "general",
+          "short-explainer"
+        ],
+        "capabilities": {
+          "asmr": true,
+          "cotQa": false,
+          "emotion": true,
+          "instruction": true,
+          "dialects": [
+            "sichuan",
+            "shaanxi",
+            "dongbei"
+          ]
+        }
+      },
+      "xiaohe": {
+        "englishLabel": "Xiaohe",
+        "speaker": "zh_female_xiaohe_uranus_bigtts",
+        "description": "Soft, clear Mandarin female voice for calm tutorials, product walkthroughs, and instructional narration.",
+        "languages": [
+          "zh",
+          "ja"
+        ],
+        "tags": [
+          "female",
+          "young",
+          "soft",
+          "calm",
+          "tutorial",
+          "walkthrough"
+        ],
+        "capabilities": {
+          "asmr": true,
+          "cotQa": false,
+          "emotion": true,
+          "instruction": true
+        }
+      },
+      "yunzhou": {
+        "englishLabel": "Yunzhou",
+        "speaker": "zh_male_m191_uranus_bigtts",
+        "description": "Neutral Mandarin male voice for balanced business explainers, factual reads, and product narration.",
+        "languages": [
+          "zh",
+          "ja"
+        ],
+        "tags": [
+          "male",
+          "young",
+          "neutral",
+          "business",
+          "explainer"
+        ],
+        "capabilities": {
+          "asmr": true,
+          "cotQa": false,
+          "emotion": true,
+          "instruction": true
+        }
+      },
+      "xiaotian": {
+        "englishLabel": "Xiaotian",
+        "speaker": "zh_male_taocheng_uranus_bigtts",
+        "description": "Bright youthful Mandarin male voice for casual creator-style videos, upbeat explainers, and light social narration.",
+        "languages": [
+          "zh",
+          "ja"
+        ],
+        "tags": [
+          "male",
+          "young",
+          "bright",
+          "upbeat",
+          "casual"
+        ],
+        "capabilities": {
+          "asmr": true,
+          "cotQa": false,
+          "emotion": true,
+          "instruction": true
+        }
+      },
+      "naiqimengwa": {
+        "englishLabel": "Childlike · Masculine",
+        "speaker": "zh_male_naiqimengwa_uranus_bigtts",
+        "description": "Childlike Mandarin boy voice for cute character lines, children's stories, and playful short narration.",
+        "languages": [
+          "zh",
+          "ja"
+        ],
+        "tags": [
+          "male",
+          "child",
+          "cute",
+          "storybook",
+          "character"
+        ],
+        "capabilities": {
+          "asmr": true,
+          "cotQa": false,
+          "emotion": true,
+          "instruction": true
+        }
+      },
+      "yingtaowanzi": {
+        "englishLabel": "Cherry Voice",
+        "speaker": "zh_female_yingtaowanzi_uranus_bigtts",
+        "description": "Childlike cartoon Mandarin female voice for animated characters, playful dialogue, and kid-oriented scenes.",
+        "languages": [
+          "zh",
+          "ja"
+        ],
+        "tags": [
+          "female",
+          "child",
+          "cartoon",
+          "roleplay",
+          "character"
+        ],
+        "capabilities": {
+          "asmr": true,
+          "cotQa": false,
+          "emotion": true,
+          "instruction": true
+        }
+      },
+      "wenroumama": {
+        "englishLabel": "Warm · Feminine",
+        "speaker": "zh_female_wenroumama_uranus_bigtts",
+        "description": "Warm middle-aged Mandarin female voice for family, lifestyle, parenting, and gentle explanatory narration.",
+        "languages": [
+          "zh",
+          "ja"
+        ],
+        "tags": [
+          "female",
+          "middle-aged",
+          "warm",
+          "family",
+          "gentle"
+        ],
+        "capabilities": {
+          "asmr": true,
+          "cotQa": false,
+          "emotion": true,
+          "instruction": true
+        }
+      },
+      "zhixingnv": {
+        "englishLabel": "Thoughtful · Feminine",
+        "speaker": "zh_female_zhixingnv_uranus_bigtts",
+        "description": "Calm knowledgeable middle-aged Mandarin female voice for educational explainers, culture, and thoughtful narration.",
+        "languages": [
+          "zh",
+          "ja"
+        ],
+        "tags": [
+          "female",
+          "middle-aged",
+          "calm",
+          "knowledge",
+          "explainer"
+        ],
+        "capabilities": {
+          "asmr": true,
+          "cotQa": false,
+          "emotion": true,
+          "instruction": true
+        }
+      },
+      "dayi": {
+        "englishLabel": "Dayi",
+        "speaker": "zh_male_dayi_uranus_bigtts",
+        "description": "Steady broadcast-style Mandarin male voice for formal video voiceover, documentary, corporate, and serious narration.",
+        "languages": [
+          "zh",
+          "ja"
+        ],
+        "tags": [
+          "male",
+          "young",
+          "steady",
+          "formal",
+          "documentary",
+          "video-voiceover"
+        ],
+        "capabilities": {
+          "asmr": true,
+          "cotQa": false,
+          "emotion": true,
+          "instruction": true
+        }
+      },
+      "jitangnv": {
+        "englishLabel": "Inspirational · Feminine",
+        "speaker": "zh_female_jitangnv_uranus_bigtts",
+        "description": "Warm Mandarin female voice for motivational, uplifting, and emotional video narration.",
+        "languages": [
+          "zh",
+          "ja"
+        ],
+        "tags": [
+          "female",
+          "young",
+          "warm",
+          "inspirational",
+          "emotional",
+          "video-voiceover"
+        ],
+        "capabilities": {
+          "asmr": true,
+          "cotQa": false,
+          "emotion": true,
+          "instruction": true
+        }
+      },
+      "liuchang": {
+        "englishLabel": "Smooth · Feminine",
+        "speaker": "zh_female_liuchangnv_uranus_bigtts",
+        "description": "Smooth, polished Mandarin female voice for clean video voiceovers, product narration, and easy-listening reads.",
+        "languages": [
+          "zh",
+          "ja"
+        ],
+        "tags": [
+          "female",
+          "young",
+          "smooth",
+          "polished",
+          "video-voiceover",
+          "narration"
+        ],
+        "capabilities": {
+          "asmr": true,
+          "cotQa": false,
+          "emotion": true,
+          "instruction": true
+        }
+      },
+      "ruyayichen": {
+        "englishLabel": "Yichen",
+        "speaker": "zh_male_ruyayichen_uranus_bigtts",
+        "description": "Elegant, refined Mandarin male voice for cultural, premium, poetic, or documentary-style narration.",
+        "languages": [
+          "zh",
+          "ja"
+        ],
+        "tags": [
+          "male",
+          "young",
+          "elegant",
+          "premium",
+          "culture",
+          "video-voiceover"
+        ],
+        "capabilities": {
+          "asmr": true,
+          "cotQa": false,
+          "emotion": true,
+          "instruction": true
+        }
+      },
+      "morgan": {
+        "englishLabel": "Morgan",
+        "speaker": "zh_male_cixingjieshuonan_uranus_bigtts",
+        "description": "Deep middle-aged Mandarin male explainer voice for knowledge videos, documentaries, and serious narration.",
+        "languages": [
+          "zh",
+          "ja"
+        ],
+        "tags": [
+          "male",
+          "middle-aged",
+          "deep",
+          "knowledge",
+          "explainer"
+        ],
+        "capabilities": {
+          "asmr": true,
+          "cotQa": false,
+          "emotion": true,
+          "instruction": true
+        }
+      },
+      "qingcang": {
+        "englishLabel": "Qingcang",
+        "speaker": "zh_male_qingcang_uranus_bigtts",
+        "description": "Old-like authoritative Mandarin male character voice for weighty narration, dramatic reads, and audiobook scenes.",
+        "languages": [
+          "zh",
+          "ja"
+        ],
+        "tags": [
+          "male",
+          "old-like",
+          "authoritative",
+          "audiobook",
+          "character"
+        ],
+        "capabilities": {
+          "asmr": true,
+          "cotQa": false,
+          "emotion": true,
+          "instruction": true
+        }
+      },
+      "huiben": {
+        "englishLabel": "Gentle · Feminine",
+        "speaker": "zh_female_xiaoxue_uranus_bigtts",
+        "description": "Gentle Mandarin female storybook voice for bedtime-style narration and soft audiobook reads.",
+        "languages": [
+          "zh",
+          "ja"
+        ],
+        "tags": [
+          "female",
+          "young",
+          "gentle",
+          "storybook",
+          "audiobook"
+        ],
+        "capabilities": {
+          "asmr": true,
+          "cotQa": false,
+          "emotion": true,
+          "instruction": true
+        }
+      },
+      "popo": {
+        "englishLabel": "Grandmotherly · Feminine",
+        "speaker": "zh_female_popo_uranus_bigtts",
+        "description": "Warm elderly Mandarin female voice for grandmother characters, folk stories, and nostalgic narration.",
+        "languages": [
+          "zh",
+          "ja"
+        ],
+        "tags": [
+          "female",
+          "old",
+          "warm",
+          "story",
+          "character"
+        ],
+        "capabilities": {
+          "asmr": true,
+          "cotQa": false,
+          "emotion": true,
+          "instruction": true
+        }
+      },
+      "yuanboxiaoshu": {
+        "englishLabel": "Thoughtful · Masculine",
+        "speaker": "zh_male_yuanboxiaoshu_uranus_bigtts",
+        "description": "Knowledgeable middle-aged Mandarin male voice for calm explainers, cultural commentary, and educational narration.",
+        "languages": [
+          "zh",
+          "ja"
+        ],
+        "tags": [
+          "male",
+          "middle-aged",
+          "knowledge",
+          "calm",
+          "explainer"
+        ],
+        "capabilities": {
+          "asmr": true,
+          "cotQa": false,
+          "emotion": true,
+          "instruction": true
+        }
+      },
+      "baqiqingshu": {
+        "englishLabel": "Confident · Masculine",
+        "speaker": "zh_male_baqiqingshu_uranus_bigtts",
+        "description": "Confident middle-aged Mandarin male voice for audiobook narration, long-form stories, and stronger dramatic reads.",
+        "languages": [
+          "zh",
+          "ja"
+        ],
+        "tags": [
+          "male",
+          "middle-aged",
+          "confident",
+          "audiobook",
+          "narrative"
+        ],
+        "capabilities": {
+          "asmr": true,
+          "cotQa": false,
+          "emotion": true,
+          "instruction": true
+        }
+      },
+      "shuanglangshaonian": {
+        "englishLabel": "Cheerful · Masculine",
+        "speaker": "saturn_zh_male_shuanglangshaonian_tob",
+        "description": "Cheerful young Mandarin male character voice for bright roleplay, teen/creator dialogue, and youthful scenes.",
+        "languages": [
+          "zh"
+        ],
+        "tags": [
+          "male",
+          "young",
+          "cheerful",
+          "youthful",
+          "roleplay",
+          "character"
+        ],
+        "capabilities": {
+          "asmr": false,
+          "cotQa": true,
+          "emotion": false,
+          "instruction": true
+        }
+      },
+      "xionger": {
+        "englishLabel": "Xiong Er",
+        "speaker": "zh_male_xionger_uranus_bigtts",
+        "description": "Playful rustic Mandarin male character voice for comedic dialogue, animated stories, and lighthearted roleplay.",
+        "languages": [
+          "zh",
+          "ja"
+        ],
+        "tags": [
+          "male",
+          "middle-aged",
+          "playful",
+          "cartoon",
+          "roleplay",
+          "character"
+        ],
+        "capabilities": {
+          "asmr": true,
+          "cotQa": false,
+          "emotion": true,
+          "instruction": true
+        }
+      },
+      "silang": {
+        "englishLabel": "Silang",
+        "speaker": "zh_male_silang_uranus_bigtts",
+        "description": "Measured Mandarin male character voice for historical drama, composed dialogue, and authoritative roleplay.",
+        "languages": [
+          "zh",
+          "ja"
+        ],
+        "tags": [
+          "male",
+          "middle-aged",
+          "steady",
+          "authoritative",
+          "roleplay",
+          "character"
+        ],
+        "capabilities": {
+          "asmr": true,
+          "cotQa": false,
+          "emotion": true,
+          "instruction": true
+        }
+      },
+      "zhishuaiyingzi": {
+        "englishLabel": "Straight-Talking Yingzi",
+        "speaker": "zh_female_zhishuaiyingzi_uranus_bigtts",
+        "description": "Direct and candid Mandarin female character voice for humorous commentary, conversational scenes, and expressive roleplay.",
+        "languages": [
+          "zh",
+          "ja"
+        ],
+        "tags": [
+          "female",
+          "middle-aged",
+          "direct",
+          "conversational",
+          "roleplay",
+          "character"
+        ],
+        "capabilities": {
+          "asmr": true,
+          "cotQa": false,
+          "emotion": true,
+          "instruction": true
+        }
+      },
+      "houge": {
+        "englishLabel": "Monkey King",
+        "speaker": "zh_male_sunwukong_uranus_bigtts",
+        "description": "Energetic heroic Mandarin male character voice for action narration, mythical stories, and lively roleplay.",
+        "languages": [
+          "zh",
+          "ja"
+        ],
+        "tags": [
+          "male",
+          "middle-aged",
+          "energetic",
+          "heroic",
+          "video-voiceover",
+          "character"
+        ],
+        "capabilities": {
+          "asmr": true,
+          "cotQa": false,
+          "emotion": true,
+          "instruction": true
+        }
+      },
+      "tangseng": {
+        "englishLabel": "Tang Seng",
+        "speaker": "zh_male_tangseng_uranus_bigtts",
+        "description": "Old-like calm Mandarin male character voice for monk-like dialogue, traditional stories, and steady narration.",
+        "languages": [
+          "zh",
+          "ja"
+        ],
+        "tags": [
+          "male",
+          "old-like",
+          "calm",
+          "roleplay",
+          "character"
+        ],
+        "capabilities": {
+          "asmr": true,
+          "cotQa": false,
+          "emotion": true,
+          "instruction": true
+        }
+      }
+    }
+  }
+}

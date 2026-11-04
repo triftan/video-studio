@@ -1,0 +1,1060 @@
+{
+  "_about": "Audio effects and crossfade curves with parameter ranges and defaults.",
+  "effects": [
+    {
+      "id": "builtin:audio-effect-chorus",
+      "name": "Chorus",
+      "description": "Modulated delay with adjustable rate, depth, feedback and mix.",
+      "properties": [
+        {
+          "key": "rate",
+          "label": "Rate (Hz)",
+          "max": 5,
+          "min": 0.05,
+          "step": 0.05,
+          "type": "number",
+          "defaultValue": 0.8
+        },
+        {
+          "key": "depth",
+          "label": "Depth (ms)",
+          "max": 4,
+          "min": 0,
+          "step": 0.1,
+          "type": "number",
+          "defaultValue": 4
+        },
+        {
+          "key": "feedback",
+          "label": "Feedback",
+          "max": 0.8,
+          "min": 0,
+          "step": 0.01,
+          "type": "number",
+          "defaultValue": 0
+        },
+        {
+          "key": "mix",
+          "label": "Wet Mix",
+          "max": 1,
+          "min": 0,
+          "step": 0.01,
+          "type": "number",
+          "defaultValue": 0.5
+        }
+      ]
+    },
+    {
+      "id": "builtin:audio-effect-compressor",
+      "name": "Compressor",
+      "description": "Control dynamics with threshold, ratio, knee, attack and release. The compressor applies automatic make-up gain. Make-up Gain (dB) is an additional output trim; 0 dB preserves the automatic make-up gain without adding manual gain.",
+      "properties": [
+        {
+          "key": "threshold",
+          "label": "Threshold (dB)",
+          "max": 0,
+          "min": -100,
+          "step": 1,
+          "type": "number",
+          "defaultValue": -24
+        },
+        {
+          "key": "ratio",
+          "label": "Ratio",
+          "max": 20,
+          "min": 1,
+          "step": 0.1,
+          "type": "number",
+          "defaultValue": 4
+        },
+        {
+          "key": "knee",
+          "label": "Knee (dB)",
+          "max": 40,
+          "min": 0,
+          "step": 1,
+          "type": "number",
+          "defaultValue": 12
+        },
+        {
+          "key": "attack",
+          "label": "Attack (ms)",
+          "max": 1000,
+          "min": 0,
+          "step": 1,
+          "type": "number",
+          "defaultValue": 10
+        },
+        {
+          "key": "release",
+          "label": "Release (ms)",
+          "max": 1000,
+          "min": 1,
+          "step": 1,
+          "type": "number",
+          "defaultValue": 250
+        },
+        {
+          "key": "makeup",
+          "label": "Make-up Gain (dB)",
+          "max": 24,
+          "min": -24,
+          "step": 0.5,
+          "type": "number",
+          "defaultValue": 0
+        }
+      ]
+    },
+    {
+      "id": "builtin:audio-effect-deesser",
+      "name": "De-esser",
+      "description": "Reduce harsh vocal sibilance. Frequency control is normalized, not measured in Hz.",
+      "properties": [
+        {
+          "key": "intensity",
+          "label": "Intensity",
+          "max": 1,
+          "min": 0,
+          "step": 0.01,
+          "type": "number",
+          "defaultValue": 0.5
+        },
+        {
+          "key": "maxReductionDb",
+          "label": "Maximum reduction (dB)",
+          "max": 48,
+          "min": 0,
+          "step": 1,
+          "type": "number",
+          "defaultValue": 24
+        },
+        {
+          "key": "frequency",
+          "label": "Frequency control",
+          "max": 1,
+          "min": 0,
+          "step": 0.01,
+          "type": "number",
+          "defaultValue": 0.5
+        },
+        {
+          "key": "output",
+          "label": "Listen",
+          "defaultValue": "output",
+          "options": [
+            {
+              "label": "Processed",
+              "value": "output"
+            },
+            {
+              "label": "Removed sibilance",
+              "value": "sibilance"
+            },
+            {
+              "label": "Original",
+              "value": "input"
+            }
+          ],
+          "type": "select"
+        }
+      ]
+    },
+    {
+      "id": "builtin:audio-effect-delay",
+      "name": "Delay / Echo",
+      "description": "Repeating echoes with filtered feedback and dry/wet mix.",
+      "properties": [
+        {
+          "key": "time",
+          "label": "Delay (ms)",
+          "max": 2000,
+          "min": 1,
+          "step": 1,
+          "type": "number",
+          "defaultValue": 250
+        },
+        {
+          "key": "feedback",
+          "label": "Feedback",
+          "max": 0.85,
+          "min": 0,
+          "step": 0.01,
+          "type": "number",
+          "defaultValue": 0.3
+        },
+        {
+          "key": "damping",
+          "label": "Feedback Low-pass (Hz)",
+          "max": 20000,
+          "min": 200,
+          "step": 1,
+          "type": "number",
+          "defaultValue": 6000
+        },
+        {
+          "key": "mix",
+          "label": "Wet Mix",
+          "max": 1,
+          "min": 0,
+          "step": 0.01,
+          "type": "number",
+          "defaultValue": 0.25
+        }
+      ]
+    },
+    {
+      "id": "builtin:audio-effect-dialogue-clarity",
+      "name": "Dialogue Clarity",
+      "description": "Reduce low rumble and add presence to dialogue.",
+      "properties": [
+        {
+          "key": "cutoff",
+          "label": "High-pass (Hz)",
+          "max": 300,
+          "min": 20,
+          "step": 1,
+          "type": "number",
+          "defaultValue": 80
+        },
+        {
+          "key": "presence",
+          "label": "Presence (dB)",
+          "max": 12,
+          "min": 0,
+          "step": 0.5,
+          "type": "number",
+          "defaultValue": 3
+        }
+      ]
+    },
+    {
+      "id": "builtin:audio-effect-dialogue-level",
+      "name": "Dialogue Level",
+      "description": "Gentle compression for more consistent dialogue.",
+      "properties": [
+        {
+          "key": "threshold",
+          "label": "Threshold (dB)",
+          "max": 0,
+          "min": -100,
+          "step": 1,
+          "type": "number",
+          "defaultValue": -20
+        },
+        {
+          "key": "ratio",
+          "label": "Ratio",
+          "max": 20,
+          "min": 1,
+          "step": 0.1,
+          "type": "number",
+          "defaultValue": 3
+        },
+        {
+          "key": "knee",
+          "label": "Knee (dB)",
+          "max": 40,
+          "min": 0,
+          "step": 1,
+          "type": "number",
+          "defaultValue": 18
+        },
+        {
+          "key": "attack",
+          "label": "Attack (ms)",
+          "max": 1000,
+          "min": 0,
+          "step": 1,
+          "type": "number",
+          "defaultValue": 15
+        },
+        {
+          "key": "release",
+          "label": "Release (ms)",
+          "max": 1000,
+          "min": 1,
+          "step": 1,
+          "type": "number",
+          "defaultValue": 180
+        },
+        {
+          "key": "makeup",
+          "label": "Make-up Gain (dB)",
+          "max": 24,
+          "min": -24,
+          "step": 0.5,
+          "type": "number",
+          "defaultValue": 2
+        }
+      ]
+    },
+    {
+      "id": "builtin:audio-effect-distortion",
+      "name": "Saturation / Distortion",
+      "description": "Soft clipping with drive, output trim and dry/wet mix.",
+      "properties": [
+        {
+          "key": "drive",
+          "label": "Drive (dB)",
+          "max": 36,
+          "min": 0,
+          "step": 0.5,
+          "type": "number",
+          "defaultValue": 12
+        },
+        {
+          "key": "output",
+          "label": "Output (dB)",
+          "max": 0,
+          "min": -36,
+          "step": 0.5,
+          "type": "number",
+          "defaultValue": -6
+        },
+        {
+          "key": "mix",
+          "label": "Wet Mix",
+          "max": 1,
+          "min": 0,
+          "step": 0.01,
+          "type": "number",
+          "defaultValue": 0.5
+        }
+      ]
+    },
+    {
+      "id": "builtin:audio-effect-dynamic-equalizer",
+      "name": "Dynamic EQ",
+      "description": "Cut a bell-shaped frequency band only when its detector exceeds the threshold. Each channel is detected independently.",
+      "properties": [
+        {
+          "key": "thresholdDb",
+          "label": "Threshold (dBFS)",
+          "max": 0,
+          "min": -80,
+          "step": 1,
+          "type": "number",
+          "defaultValue": -30
+        },
+        {
+          "key": "maxReductionDb",
+          "label": "Maximum cut (dB)",
+          "max": 24,
+          "min": 2,
+          "step": 1,
+          "type": "number",
+          "defaultValue": 6
+        },
+        {
+          "key": "amount",
+          "label": "Reduction per dB above threshold",
+          "max": 4,
+          "min": 0,
+          "step": 0.1,
+          "type": "number",
+          "defaultValue": 1
+        },
+        {
+          "key": "detectionFrequencyHz",
+          "label": "Detection frequency (Hz)",
+          "max": 20000,
+          "min": 20,
+          "step": 10,
+          "type": "number",
+          "defaultValue": 3000
+        },
+        {
+          "key": "detectionQ",
+          "label": "Detection Q",
+          "max": 20,
+          "min": 0.1,
+          "step": 0.1,
+          "type": "number",
+          "defaultValue": 1
+        },
+        {
+          "key": "targetFrequencyHz",
+          "label": "EQ frequency (Hz)",
+          "max": 20000,
+          "min": 20,
+          "step": 10,
+          "type": "number",
+          "defaultValue": 3000
+        },
+        {
+          "key": "targetQ",
+          "label": "EQ Q",
+          "max": 20,
+          "min": 0.1,
+          "step": 0.1,
+          "type": "number",
+          "defaultValue": 1
+        },
+        {
+          "key": "attackMs",
+          "label": "Detection attack (ms)",
+          "max": 2000,
+          "min": 0.01,
+          "step": 1,
+          "type": "number",
+          "defaultValue": 10
+        },
+        {
+          "key": "releaseMs",
+          "label": "Detection release (ms)",
+          "max": 2000,
+          "min": 0.01,
+          "step": 1,
+          "type": "number",
+          "defaultValue": 150
+        }
+      ]
+    },
+    {
+      "id": "builtin:audio-effect-equalizer",
+      "name": "Equalizer",
+      "description": "Shape audio with six fixed bands: high-pass, low shelf, two mid bells, high shelf and low-pass.",
+      "properties": [
+        {
+          "key": "highPassEnabled",
+          "label": "High-pass Enabled",
+          "defaultValue": false,
+          "type": "boolean"
+        },
+        {
+          "key": "highPassFrequency",
+          "label": "High-pass Frequency (Hz)",
+          "max": 20000,
+          "min": 20,
+          "step": 1,
+          "type": "number",
+          "defaultValue": 80
+        },
+        {
+          "key": "lowEnabled",
+          "label": "Low Enabled",
+          "defaultValue": true,
+          "type": "boolean"
+        },
+        {
+          "key": "low",
+          "label": "Low Gain (dB)",
+          "max": 24,
+          "min": -24,
+          "step": 0.5,
+          "type": "number",
+          "defaultValue": 0
+        },
+        {
+          "key": "lowFrequency",
+          "label": "Low Frequency (Hz)",
+          "max": 1000,
+          "min": 20,
+          "step": 1,
+          "type": "number",
+          "defaultValue": 150
+        },
+        {
+          "key": "midEnabled",
+          "label": "Mid Enabled",
+          "defaultValue": true,
+          "type": "boolean"
+        },
+        {
+          "key": "mid",
+          "label": "Mid Gain (dB)",
+          "max": 24,
+          "min": -24,
+          "step": 0.5,
+          "type": "number",
+          "defaultValue": 0
+        },
+        {
+          "key": "midFrequency",
+          "label": "Mid Frequency (Hz)",
+          "max": 12000,
+          "min": 100,
+          "step": 1,
+          "type": "number",
+          "defaultValue": 1500
+        },
+        {
+          "key": "q",
+          "label": "Mid Q",
+          "max": 10,
+          "min": 0.1,
+          "step": 0.1,
+          "type": "number",
+          "defaultValue": 1
+        },
+        {
+          "key": "mid2Enabled",
+          "label": "Mid 2 Enabled",
+          "defaultValue": false,
+          "type": "boolean"
+        },
+        {
+          "key": "mid2Frequency",
+          "label": "Mid 2 Frequency (Hz)",
+          "max": 20000,
+          "min": 20,
+          "step": 1,
+          "type": "number",
+          "defaultValue": 3000
+        },
+        {
+          "key": "mid2",
+          "label": "Mid 2 Gain (dB)",
+          "max": 24,
+          "min": -24,
+          "step": 0.5,
+          "type": "number",
+          "defaultValue": 0
+        },
+        {
+          "key": "mid2Q",
+          "label": "Mid 2 Q",
+          "max": 10,
+          "min": 0.1,
+          "step": 0.1,
+          "type": "number",
+          "defaultValue": 1
+        },
+        {
+          "key": "highEnabled",
+          "label": "High Enabled",
+          "defaultValue": true,
+          "type": "boolean"
+        },
+        {
+          "key": "high",
+          "label": "High Gain (dB)",
+          "max": 24,
+          "min": -24,
+          "step": 0.5,
+          "type": "number",
+          "defaultValue": 0
+        },
+        {
+          "key": "highFrequency",
+          "label": "High Frequency (Hz)",
+          "max": 20000,
+          "min": 1000,
+          "step": 1,
+          "type": "number",
+          "defaultValue": 6000
+        },
+        {
+          "key": "lowPassEnabled",
+          "label": "Low-pass Enabled",
+          "defaultValue": false,
+          "type": "boolean"
+        },
+        {
+          "key": "lowPassFrequency",
+          "label": "Low-pass Frequency (Hz)",
+          "max": 20000,
+          "min": 20,
+          "step": 1,
+          "type": "number",
+          "defaultValue": 12000
+        }
+      ]
+    },
+    {
+      "id": "builtin:audio-effect-flanger",
+      "name": "Flanger",
+      "description": "Modulated delay with adjustable rate, depth, feedback and mix.",
+      "properties": [
+        {
+          "key": "rate",
+          "label": "Rate (Hz)",
+          "max": 5,
+          "min": 0.05,
+          "step": 0.05,
+          "type": "number",
+          "defaultValue": 0.8
+        },
+        {
+          "key": "depth",
+          "label": "Depth (ms)",
+          "max": 2,
+          "min": 0,
+          "step": 0.1,
+          "type": "number",
+          "defaultValue": 2
+        },
+        {
+          "key": "feedback",
+          "label": "Feedback",
+          "max": 0.8,
+          "min": 0,
+          "step": 0.01,
+          "type": "number",
+          "defaultValue": 0.4
+        },
+        {
+          "key": "mix",
+          "label": "Wet Mix",
+          "max": 1,
+          "min": 0,
+          "step": 0.01,
+          "type": "number",
+          "defaultValue": 0.5
+        }
+      ]
+    },
+    {
+      "id": "builtin:audio-effect-gain",
+      "name": "Gain",
+      "description": "Adjust signal level within an effect chain.",
+      "properties": [
+        {
+          "key": "gain",
+          "label": "Gain (dB)",
+          "max": 24,
+          "min": -60,
+          "step": 0.5,
+          "type": "number",
+          "defaultValue": 0
+        }
+      ]
+    },
+    {
+      "id": "builtin:audio-effect-gate",
+      "name": "Noise Gate",
+      "description": "Reduce low-level noise during pauses with stereo-linked downward expansion. Noise remains while the gate is open.",
+      "properties": [
+        {
+          "key": "thresholdDb",
+          "label": "Threshold (dBFS)",
+          "max": 0,
+          "min": -80,
+          "step": 1,
+          "type": "number",
+          "defaultValue": -35
+        },
+        {
+          "key": "maxReductionDb",
+          "label": "Maximum reduction (dB)",
+          "max": 80,
+          "min": 0,
+          "step": 1,
+          "type": "number",
+          "defaultValue": 24
+        },
+        {
+          "key": "ratio",
+          "label": "Expansion ratio",
+          "max": 20,
+          "min": 1,
+          "step": 0.5,
+          "type": "number",
+          "defaultValue": 4
+        },
+        {
+          "key": "attackMs",
+          "label": "Attack (ms)",
+          "max": 1000,
+          "min": 0.01,
+          "step": 1,
+          "type": "number",
+          "defaultValue": 5
+        },
+        {
+          "key": "releaseMs",
+          "label": "Release (ms)",
+          "max": 3000,
+          "min": 0.01,
+          "step": 10,
+          "type": "number",
+          "defaultValue": 200
+        },
+        {
+          "key": "knee",
+          "label": "Knee",
+          "max": 8,
+          "min": 1,
+          "step": 0.1,
+          "type": "number",
+          "defaultValue": 2.828427125
+        }
+      ]
+    },
+    {
+      "id": "builtin:audio-effect-hall",
+      "name": "Hall",
+      "description": "Longer, darker hall ambience.",
+      "properties": [
+        {
+          "key": "decay",
+          "label": "Decay (seconds)",
+          "max": 6,
+          "min": 0.1,
+          "step": 0.1,
+          "type": "number",
+          "defaultValue": 3
+        },
+        {
+          "key": "preDelay",
+          "label": "Pre-delay (ms)",
+          "max": 100,
+          "min": 0,
+          "step": 1,
+          "type": "number",
+          "defaultValue": 30
+        },
+        {
+          "key": "damping",
+          "label": "Damping Cutoff (Hz)",
+          "max": 16000,
+          "min": 500,
+          "step": 1,
+          "type": "number",
+          "defaultValue": 3500
+        },
+        {
+          "key": "mix",
+          "label": "Wet Mix",
+          "max": 1,
+          "min": 0,
+          "step": 0.01,
+          "type": "number",
+          "defaultValue": 0.3
+        }
+      ]
+    },
+    {
+      "id": "builtin:audio-effect-high-pass",
+      "name": "High-pass Filter",
+      "description": "A 12 dB/octave filter with adjustable cutoff and resonance.",
+      "properties": [
+        {
+          "key": "frequency",
+          "label": "Cutoff (Hz)",
+          "max": 20000,
+          "min": 20,
+          "step": 1,
+          "type": "number",
+          "defaultValue": 80
+        },
+        {
+          "key": "q",
+          "label": "Resonance (Q)",
+          "max": 10,
+          "min": 0.1,
+          "step": 0.01,
+          "type": "number",
+          "defaultValue": 0.707
+        }
+      ]
+    },
+    {
+      "id": "builtin:audio-effect-limiter",
+      "name": "Limiter",
+      "description": "Control sudden peaks with stereo-linked lookahead limiting. The ceiling limits sample peaks; automatic makeup gain is disabled.",
+      "properties": [
+        {
+          "key": "inputGainDb",
+          "label": "Input gain (dB)",
+          "max": 24,
+          "min": -24,
+          "step": 0.5,
+          "type": "number",
+          "defaultValue": 0
+        },
+        {
+          "key": "ceilingDb",
+          "label": "Ceiling (dBFS)",
+          "max": 0,
+          "min": -24,
+          "step": 0.5,
+          "type": "number",
+          "defaultValue": -1
+        },
+        {
+          "key": "attackMs",
+          "label": "Lookahead / attack (ms)",
+          "max": 80,
+          "min": 0.1,
+          "step": 0.1,
+          "type": "number",
+          "defaultValue": 5
+        },
+        {
+          "key": "releaseMs",
+          "label": "Release (ms)",
+          "max": 8000,
+          "min": 1,
+          "step": 1,
+          "type": "number",
+          "defaultValue": 50
+        }
+      ]
+    },
+    {
+      "id": "builtin:audio-effect-low-pass",
+      "name": "Low-pass Filter",
+      "description": "A 12 dB/octave filter with adjustable cutoff and resonance.",
+      "properties": [
+        {
+          "key": "frequency",
+          "label": "Cutoff (Hz)",
+          "max": 20000,
+          "min": 20,
+          "step": 1,
+          "type": "number",
+          "defaultValue": 8000
+        },
+        {
+          "key": "q",
+          "label": "Resonance (Q)",
+          "max": 10,
+          "min": 0.1,
+          "step": 0.01,
+          "type": "number",
+          "defaultValue": 0.707
+        }
+      ]
+    },
+    {
+      "id": "builtin:audio-effect-pan",
+      "name": "Pan",
+      "description": "Position audio between the left and right channels.",
+      "properties": [
+        {
+          "key": "pan",
+          "label": "Pan (Left / Right)",
+          "max": 1,
+          "min": -1,
+          "step": 0.01,
+          "type": "number",
+          "defaultValue": 0
+        }
+      ]
+    },
+    {
+      "id": "builtin:audio-effect-phaser",
+      "name": "Phaser",
+      "description": "Six modulated all-pass stages produce a sweeping phase effect.",
+      "properties": [
+        {
+          "key": "rate",
+          "label": "Rate (Hz)",
+          "max": 5,
+          "min": 0.05,
+          "step": 0.05,
+          "type": "number",
+          "defaultValue": 0.5
+        },
+        {
+          "key": "frequency",
+          "label": "Center Frequency (Hz)",
+          "max": 5000,
+          "min": 100,
+          "step": 1,
+          "type": "number",
+          "defaultValue": 1000
+        },
+        {
+          "key": "depth",
+          "label": "Depth (octaves)",
+          "max": 2,
+          "min": 0,
+          "step": 0.1,
+          "type": "number",
+          "defaultValue": 1
+        },
+        {
+          "key": "mix",
+          "label": "Wet Mix",
+          "max": 1,
+          "min": 0,
+          "step": 0.01,
+          "type": "number",
+          "defaultValue": 0.5
+        }
+      ]
+    },
+    {
+      "id": "builtin:audio-effect-reverb",
+      "name": "Reverb",
+      "description": "Algorithmic stereo room reverb with decay, damping and pre-delay.",
+      "properties": [
+        {
+          "key": "decay",
+          "label": "Decay (seconds)",
+          "max": 6,
+          "min": 0.1,
+          "step": 0.1,
+          "type": "number",
+          "defaultValue": 1.5
+        },
+        {
+          "key": "preDelay",
+          "label": "Pre-delay (ms)",
+          "max": 100,
+          "min": 0,
+          "step": 1,
+          "type": "number",
+          "defaultValue": 15
+        },
+        {
+          "key": "damping",
+          "label": "Damping Cutoff (Hz)",
+          "max": 16000,
+          "min": 500,
+          "step": 1,
+          "type": "number",
+          "defaultValue": 5000
+        },
+        {
+          "key": "mix",
+          "label": "Wet Mix",
+          "max": 1,
+          "min": 0,
+          "step": 0.01,
+          "type": "number",
+          "defaultValue": 0.25
+        }
+      ]
+    },
+    {
+      "id": "builtin:audio-effect-small-room",
+      "name": "Small Room",
+      "description": "Short, subtle room ambience.",
+      "properties": [
+        {
+          "key": "decay",
+          "label": "Decay (seconds)",
+          "max": 6,
+          "min": 0.1,
+          "step": 0.1,
+          "type": "number",
+          "defaultValue": 0.5
+        },
+        {
+          "key": "preDelay",
+          "label": "Pre-delay (ms)",
+          "max": 100,
+          "min": 0,
+          "step": 1,
+          "type": "number",
+          "defaultValue": 8
+        },
+        {
+          "key": "damping",
+          "label": "Damping Cutoff (Hz)",
+          "max": 16000,
+          "min": 500,
+          "step": 1,
+          "type": "number",
+          "defaultValue": 6500
+        },
+        {
+          "key": "mix",
+          "label": "Wet Mix",
+          "max": 1,
+          "min": 0,
+          "step": 0.01,
+          "type": "number",
+          "defaultValue": 0.15
+        }
+      ]
+    },
+    {
+      "id": "builtin:audio-effect-subtle-echo",
+      "name": "Subtle Echo",
+      "description": "A quiet, short echo.",
+      "properties": [
+        {
+          "key": "time",
+          "label": "Delay (ms)",
+          "max": 2000,
+          "min": 1,
+          "step": 1,
+          "type": "number",
+          "defaultValue": 120
+        },
+        {
+          "key": "feedback",
+          "label": "Feedback",
+          "max": 0.85,
+          "min": 0,
+          "step": 0.01,
+          "type": "number",
+          "defaultValue": 0.15
+        },
+        {
+          "key": "damping",
+          "label": "Feedback Low-pass (Hz)",
+          "max": 20000,
+          "min": 200,
+          "step": 1,
+          "type": "number",
+          "defaultValue": 6000
+        },
+        {
+          "key": "mix",
+          "label": "Wet Mix",
+          "max": 1,
+          "min": 0,
+          "step": 0.01,
+          "type": "number",
+          "defaultValue": 0.12
+        }
+      ]
+    },
+    {
+      "id": "builtin:audio-effect-telephone",
+      "name": "Telephone",
+      "description": "Band-limited telephone voice.",
+      "properties": [
+        {
+          "key": "low",
+          "label": "Low Cut (Hz)",
+          "max": 1000,
+          "min": 100,
+          "step": 1,
+          "type": "number",
+          "defaultValue": 300
+        },
+        {
+          "key": "high",
+          "label": "High Cut (Hz)",
+          "max": 8000,
+          "min": 1500,
+          "step": 1,
+          "type": "number",
+          "defaultValue": 3400
+        }
+      ]
+    }
+  ],
+  "transitions": [
+    {
+      "id": "builtin:transition-audio-constant-gain",
+      "name": "Constant Gain",
+      "description": "Linear crossfade for similar or correlated audio.",
+      "properties": []
+    },
+    {
+      "id": "builtin:transition-audio-exponential-fade",
+      "name": "Exponential Fade",
+      "description": "Nonlinear crossfade with a softer overlap.",
+      "properties": []
+    },
+    {
+      "id": "builtin:transition-audio-fade-through-silence",
+      "name": "Fade Through Silence",
+      "description": "Fade out completely at the cut, then fade in the next clip.",
+      "properties": []
+    },
+    {
+      "id": "builtin:transition-audio-cross-fade",
+      "name": "Constant Power",
+      "description": "Equal-power crossfade for dialogue, ambience and music.",
+      "properties": []
+    }
+  ]
+}

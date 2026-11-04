@@ -1,0 +1,376 @@
+{
+  "_about": "Motion graphic template library. Check here before writing a graphic from scratch. Each entry is a Remotion composition: render with `npx remotion render src/index.ts <id> out.mov --props='{...}'`. Overlay templates have transparent backgrounds (render with --codec=prores --prores-profile=4444 --pixel-format=yuva444p10le --image-format=png). Every prop is editable.",
+  "templates": [
+    {
+      "id": "Checklist",
+      "category": "Lists",
+      "overlay": true,
+      "seconds": 6,
+      "desc": "Card with a to-do list that ticks off item by item with strike-through. Content plans, steps done, requirements.",
+      "props": {
+        "accent": "#3D7BFF",
+        "text": "#0E1116",
+        "surface": "#FFFFFF",
+        "title": "Content plan",
+        "tag": "WRITE → PUBLISH",
+        "items": [
+          "Pick a topic",
+          "Write the hook",
+          "Record",
+          "Edit & publish"
+        ],
+        "position": "top-right",
+        "secondsPerItem": 0.9,
+        "size": 1.35
+      },
+      "file": "src/library/Checklist.tsx"
+    },
+    {
+      "id": "NumberCounter",
+      "category": "Data",
+      "overlay": true,
+      "seconds": 5,
+      "desc": "Large metric that counts up with a live dot and a trend chip. Stats, followers, revenue, users.",
+      "props": {
+        "accent": "#3D7BFF",
+        "text": "#0E1116",
+        "surface": "#FFFFFF",
+        "value": 9527,
+        "from": 0,
+        "prefix": "",
+        "suffix": "",
+        "decimals": 0,
+        "label": "active users",
+        "trend": "+38%",
+        "position": "bottom-left",
+        "countSeconds": 1.6,
+        "size": 1.35
+      },
+      "file": "src/library/NumberCounter.tsx"
+    },
+    {
+      "id": "WeeklySchedule",
+      "category": "Lists",
+      "overlay": true,
+      "seconds": 6,
+      "desc": "Week grid where posts pop into days. Posting cadence, content calendars, routines.",
+      "props": {
+        "accent": "#3D7BFF",
+        "text": "#0E1116",
+        "surface": "#FFFFFF",
+        "title": "Posting schedule",
+        "subtitle": "Weekly cadence",
+        "days": [
+          "Mon",
+          "Tue",
+          "Wed",
+          "Thu",
+          "Fri"
+        ],
+        "slots": [
+          {
+            "day": 0,
+            "label": "Long video"
+          },
+          {
+            "day": 1,
+            "label": "Short"
+          },
+          {
+            "day": 2,
+            "label": "Short"
+          },
+          {
+            "day": 3,
+            "label": "Newsletter"
+          },
+          {
+            "day": 4,
+            "label": "Short"
+          },
+          {
+            "day": 4,
+            "label": "Live Q&A"
+          }
+        ],
+        "position": "top-right",
+        "size": 1.35
+      },
+      "file": "src/library/WeeklySchedule.tsx"
+    },
+    {
+      "id": "StampTitle",
+      "category": "Titles",
+      "overlay": false,
+      "seconds": 4,
+      "desc": "Case-file title card: typed kicker, slammed title, rubber stamp with a shake. Investigations, reveals, myths busted.",
+      "props": {
+        "kicker": "CASE FILE #042",
+        "title": "Made with code",
+        "stamp": "CONFIRMED",
+        "paper": "#EFE6D2",
+        "ink": "#1D1A16",
+        "stampColor": "#C0392B"
+      },
+      "file": "src/library/StampTitle.tsx"
+    },
+    {
+      "id": "LoadingBar",
+      "category": "UI",
+      "overlay": true,
+      "seconds": 5,
+      "desc": "Progress bar stepping through stage labels with shimmer, then a done state. AI generating, uploading, processing.",
+      "props": {
+        "accent": "#3D7BFF",
+        "text": "#0E1116",
+        "surface": "#FFFFFF",
+        "stages": [
+          "Reading footage…",
+          "Cutting silences…",
+          "Adding captions…",
+          "Rendering…"
+        ],
+        "doneLabel": "Done",
+        "position": "bottom-right",
+        "fillSeconds": 3,
+        "size": 1.35
+      },
+      "file": "src/library/LoadingBar.tsx"
+    },
+    {
+      "id": "DonutChart",
+      "category": "Data",
+      "overlay": false,
+      "seconds": 6,
+      "desc": "Donut chart sweeping in with legend and percentages. Market share, budget split, survey results.",
+      "props": {
+        "title": "Where sales come from",
+        "slices": [
+          {
+            "label": "Organic",
+            "value": 46,
+            "color": "#3D7BFF"
+          },
+          {
+            "label": "Paid social",
+            "value": 32,
+            "color": "#14C38E"
+          },
+          {
+            "label": "Referral",
+            "value": 22,
+            "color": "#FFB020"
+          }
+        ],
+        "background": "#F7F8FA",
+        "text": "#0E1116"
+      },
+      "file": "src/library/DonutChart.tsx"
+    },
+    {
+      "id": "LineChart",
+      "category": "Data",
+      "overlay": false,
+      "seconds": 6,
+      "desc": "Line that draws across with area fill and a pulsing end value. Growth over time, trends.",
+      "props": {
+        "title": "Monthly subscribers",
+        "points": [
+          {
+            "label": "Jan",
+            "value": 1200
+          },
+          {
+            "label": "Feb",
+            "value": 1900
+          },
+          {
+            "label": "Mar",
+            "value": 2600
+          },
+          {
+            "label": "Apr",
+            "value": 2400
+          },
+          {
+            "label": "May",
+            "value": 4100
+          },
+          {
+            "label": "Jun",
+            "value": 6300
+          }
+        ],
+        "unit": "",
+        "accent": "#7C5CFF",
+        "background": "#0B0B0F",
+        "text": "#F5F5F7"
+      },
+      "file": "src/library/LineChart.tsx"
+    },
+    {
+      "id": "Countdown",
+      "category": "UI",
+      "overlay": false,
+      "seconds": 4,
+      "desc": "Ring countdown with punch-in numbers and a GO flash. Launches, intros, challenges.",
+      "props": {
+        "from": 3,
+        "label": "Launching in",
+        "goText": "GO",
+        "accent": "#FF4D2E",
+        "background": "#0B0B0F",
+        "text": "#F5F5F7"
+      },
+      "file": "src/library/Countdown.tsx"
+    },
+    {
+      "id": "SubscribeButton",
+      "category": "Social",
+      "overlay": true,
+      "seconds": 4,
+      "desc": "Channel chip with a cursor that clicks Subscribe; flips to Subscribed and rings the bell.",
+      "props": {
+        "channel": "Northwind Studio",
+        "avatarText": "NS",
+        "buttonColor": "#FF0033",
+        "doneColor": "#3A3A3A",
+        "position": "bottom-left",
+        "clickSecond": 1.6,
+        "size": 1.35
+      },
+      "file": "src/library/SubscribeButton.tsx"
+    },
+    {
+      "id": "SocialHandle",
+      "category": "Social",
+      "overlay": true,
+      "seconds": 4,
+      "desc": "Platform icon pops and a pill unrolls with your handle. Watermarks, credits, follow prompts.",
+      "props": {
+        "platform": "instagram",
+        "handle": "@northwind.studio",
+        "position": "bottom-left",
+        "size": 1.35
+      },
+      "file": "src/library/SocialHandle.tsx"
+    },
+    {
+      "id": "CtaPopup",
+      "category": "Social",
+      "overlay": true,
+      "seconds": 5,
+      "desc": "Notification-style CTA card with a pulsing button. Links in bio, free downloads, sign-ups.",
+      "props": {
+        "accent": "#3D7BFF",
+        "text": "#0E1116",
+        "surface": "#FFFFFF",
+        "eyebrow": "Free template",
+        "headline": "Get the content-plan checklist",
+        "button": "Link in bio",
+        "icon": "📋",
+        "position": "top-left",
+        "size": 1.35
+      },
+      "file": "src/library/CtaPopup.tsx"
+    },
+    {
+      "id": "Callout",
+      "category": "Callouts",
+      "overlay": true,
+      "seconds": 4,
+      "desc": "Pulsing ring on a point in the footage with a line drawn to a label. Point out UI, products, details.",
+      "props": {
+        "x": 0.62,
+        "y": 0.45,
+        "labelX": 0.8,
+        "labelY": 0.25,
+        "label": "Auto captions",
+        "detail": "100+ languages",
+        "accent": "#3D7BFF",
+        "ring": true,
+        "size": 1.35
+      },
+      "file": "src/library/Callout.tsx"
+    },
+    {
+      "id": "AppPromo",
+      "category": "Promo",
+      "overlay": false,
+      "seconds": 10,
+      "desc": "Phone mockup cycling screens while numbered headlines slide; ends on app name and CTA. Add screenshots via public/.",
+      "props": {
+        "appName": "Northwind",
+        "beats": [
+          {
+            "headline": "Upload your footage",
+            "color": "#3D7BFF"
+          },
+          {
+            "headline": "Describe the edit",
+            "color": "#14C38E"
+          },
+          {
+            "headline": "Post in minutes",
+            "color": "#FF4D8D"
+          }
+        ],
+        "cta": "Download free",
+        "background": "#F7F8FA",
+        "text": "#0E1116",
+        "accent": "#3D7BFF",
+        "secondsPerBeat": 2.4
+      },
+      "file": "src/library/AppPromo.tsx"
+    },
+    {
+      "id": "QuoteCard",
+      "category": "Titles",
+      "overlay": false,
+      "seconds": 6,
+      "desc": "Serif pull quote revealing word by word, author with accent rule. Testimonials, quotes, key lines.",
+      "props": {
+        "quote": "It feels like having an editor on call, at two in the morning.",
+        "author": "Sam Lee",
+        "role": "Creator, 480k subscribers",
+        "accent": "#C8A96A",
+        "background": "#F4F1EA",
+        "text": "#16130F"
+      },
+      "file": "src/library/QuoteCard.tsx"
+    },
+    {
+      "id": "ChapterCard",
+      "category": "Titles",
+      "overlay": false,
+      "seconds": 3,
+      "desc": "Accent panel wipe with giant chapter number and title. Section breaks, listicle steps.",
+      "props": {
+        "number": "02",
+        "title": "Cut the dead air",
+        "accent": "#FFE100",
+        "background": "#111111",
+        "text": "#111111",
+        "transparent": false
+      },
+      "file": "src/library/ChapterCard.tsx"
+    },
+    {
+      "id": "EndCard",
+      "category": "Promo",
+      "overlay": false,
+      "seconds": 8,
+      "desc": "End screen with watch-next slot, subscribe circle and handle. Last 5-20 s of YouTube videos.",
+      "props": {
+        "headline": "Thanks for watching",
+        "handle": "@northwind",
+        "nextLabel": "Watch next",
+        "nextTitle": "How I edit 10× faster",
+        "accent": "#FF4D2E",
+        "background": "#0B0B0F",
+        "text": "#F5F5F7"
+      },
+      "file": "src/library/EndCard.tsx"
+    }
+  ]
+}

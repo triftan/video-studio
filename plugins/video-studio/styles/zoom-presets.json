@@ -1,0 +1,81 @@
+{
+  "_about": "Punch-in / push zoom presets. magnification is a scale factor; focalPoint is 0-1 of frame.",
+  "presets": [
+    {
+      "id": "slow-push",
+      "name": "Slow Push",
+      "description": "Move in at a constant speed across the effect interval.",
+      "propertyOverrides": {
+        "magnification": 1.4,
+        "shape": "slow-push",
+        "direction": "in",
+        "focalPointY": 0.37,
+        "easeOutDurationInSeconds": 0
+      }
+    },
+    {
+      "id": "slow-pull",
+      "name": "Slow Pull",
+      "description": "Move out at a constant speed across the effect interval.",
+      "propertyOverrides": {
+        "magnification": 1.4,
+        "shape": "slow-pull",
+        "direction": "out",
+        "focalPointY": 0.37,
+        "easeInDurationInSeconds": 0
+      }
+    },
+    {
+      "id": "instant",
+      "name": "Instant",
+      "description": "Immediately magnify the picture without an animated transition.",
+      "propertyOverrides": {
+        "magnification": 1.4,
+        "shape": "instant",
+        "direction": "in",
+        "focalPointY": 0.37,
+        "easeInDurationInSeconds": 0,
+        "easeOutDurationInSeconds": 0
+      }
+    },
+    {
+      "id": "quick-in",
+      "name": "Quick In",
+      "description": "Quick spring zoom in with speed-dependent motion blur.",
+      "propertyOverrides": {
+        "magnification": 1.4,
+        "shape": "spring-focused",
+        "direction": "in",
+        "focalPointY": 0.37,
+        "easeInDurationInSeconds": 1.4,
+        "easeOutDurationInSeconds": 0
+      }
+    },
+    {
+      "id": "quick-out",
+      "name": "Quick Out",
+      "description": "Quick spring zoom out with speed-dependent motion blur.",
+      "propertyOverrides": {
+        "magnification": 1.4,
+        "shape": "spring-focused",
+        "direction": "out",
+        "focalPointY": 0.37,
+        "easeInDurationInSeconds": 0,
+        "easeOutDurationInSeconds": 1.4
+      }
+    },
+    {
+      "id": "in-out",
+      "name": "Zoom In + Out",
+      "description": "Spring zoom in, hold, then zoom out; adjust each movement independently.",
+      "propertyOverrides": {
+        "magnification": 1.4,
+        "shape": "spring-focused",
+        "direction": "in-out",
+        "focalPointY": 0.37,
+        "easeInDurationInSeconds": 1.4,
+        "easeOutDurationInSeconds": 1.4
+      }
+    }
+  ]
+}

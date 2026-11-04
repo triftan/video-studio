@@ -1,0 +1,683 @@
+{
+  "_about": "Film-emulation color grade presets (no LUT needed). temperature in Kelvin; most others are 0-1 or multipliers where 1 = neutral.",
+  "presets": {
+    "70s": {
+      "basicEnabled": true,
+      "exposure": 0,
+      "contrast": 1,
+      "highlights": 0,
+      "fade": 0,
+      "fadeRolloff": 0.5,
+      "temperature": 6500,
+      "tint": 0,
+      "skinBias": 0,
+      "saturation": 0.53299,
+      "subtractiveSat": 1,
+      "richness": 0.62564,
+      "bleachBypass": 0,
+      "colorBlend": 1,
+      "splitEnabled": false,
+      "splitMode": "natural",
+      "splitAmount": 0,
+      "splitHue": 35,
+      "splitPivot": 0.5,
+      "hslEnabled": true,
+      "hslHueRed": 1.283,
+      "hslSaturationRed": -36.909,
+      "hslLuminanceRed": -2.052,
+      "hslHueOrange": 21.162,
+      "hslSaturationOrange": -32.101,
+      "hslLuminanceOrange": -0.915,
+      "hslHueYellow": 0.536,
+      "hslSaturationYellow": -9.036,
+      "hslLuminanceYellow": -1.861,
+      "hslHueGreen": -1.65,
+      "hslSaturationGreen": -14.46,
+      "hslLuminanceGreen": -1.914,
+      "hslHueAqua": -2.178,
+      "hslSaturationAqua": -29.257,
+      "hslLuminanceAqua": -1.606,
+      "hslHueBlue": -1.326,
+      "hslSaturationBlue": -32.508,
+      "hslLuminanceBlue": -2.098,
+      "hslHuePurple": -1.015,
+      "hslSaturationPurple": -35.921,
+      "hslLuminancePurple": -1.414,
+      "hslHueMagenta": -0.48,
+      "hslSaturationMagenta": -37.678,
+      "hslLuminanceMagenta": -0.76,
+      "wheelsEnabled": true,
+      "lift_r": 0,
+      "lift_g": 0,
+      "lift_b": 0,
+      "gamma_r": 1,
+      "gamma_g": 1,
+      "gamma_b": 1,
+      "gain_r": 1,
+      "gain_g": 1,
+      "gain_b": 1,
+      "curvesEnabled": true,
+      "rgbCurve": [
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 1,
+          "y": 1
+        }
+      ],
+      "redCurve": [
+        {
+          "x": 0,
+          "y": 0.087426
+        },
+        {
+          "x": 0.06,
+          "y": 0.142714
+        },
+        {
+          "x": 0.14,
+          "y": 0.21643
+        },
+        {
+          "x": 0.25,
+          "y": 0.318286
+        },
+        {
+          "x": 0.4,
+          "y": 0.455555
+        },
+        {
+          "x": 0.6,
+          "y": 0.635477
+        },
+        {
+          "x": 0.8,
+          "y": 0.815721
+        },
+        {
+          "x": 1,
+          "y": 0.996587
+        }
+      ],
+      "greenCurve": [
+        {
+          "x": 0,
+          "y": 0.037791
+        },
+        {
+          "x": 0.06,
+          "y": 0.092136
+        },
+        {
+          "x": 0.14,
+          "y": 0.164482
+        },
+        {
+          "x": 0.25,
+          "y": 0.264268
+        },
+        {
+          "x": 0.4,
+          "y": 0.400841
+        },
+        {
+          "x": 0.6,
+          "y": 0.581285
+        },
+        {
+          "x": 0.8,
+          "y": 0.761589
+        },
+        {
+          "x": 1,
+          "y": 0.942184
+        }
+      ],
+      "blueCurve": [
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 0.06,
+          "y": 0.031326
+        },
+        {
+          "x": 0.14,
+          "y": 0.103554
+        },
+        {
+          "x": 0.25,
+          "y": 0.203182
+        },
+        {
+          "x": 0.4,
+          "y": 0.342121
+        },
+        {
+          "x": 0.6,
+          "y": 0.518801
+        },
+        {
+          "x": 0.8,
+          "y": 0.701399
+        },
+        {
+          "x": 1,
+          "y": 0.883193
+        }
+      ],
+      "luminanceCurve": [
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 1,
+          "y": 1
+        }
+      ],
+      "hueVsHueCurve": [
+        {
+          "x": 0,
+          "y": 0.5
+        },
+        {
+          "x": 1,
+          "y": 0.5
+        }
+      ],
+      "hueVsSaturationCurve": [
+        {
+          "x": 0,
+          "y": 0.5
+        },
+        {
+          "x": 1,
+          "y": 0.5
+        }
+      ],
+      "hueVsLuminanceCurve": [
+        {
+          "x": 0,
+          "y": 0.5
+        },
+        {
+          "x": 1,
+          "y": 0.5
+        }
+      ],
+      "filmEffectsEnabled": true,
+      "effectsBlend": 1,
+      "vignetteEnabled": false,
+      "vignetteAmount": 0.3,
+      "vignetteSize": 0.5,
+      "vignetteSoftness": 0.6,
+      "grainEnabled": true,
+      "grainAmount": 0.75,
+      "grainSize": 6,
+      "grainSoftness": 0.45,
+      "grainSaturation": 0,
+      "grainImageDefocus": 0.3165,
+      "grainApplyToBlack": false,
+      "flickerEnabled": false,
+      "flickerUp": 20,
+      "flickerDown": 30,
+      "flickerFrames": 70,
+      "flickerSeed": 0,
+      "damageEnabled": false,
+      "damageDustDiameter": 2,
+      "damageDustCount": 10,
+      "damageScratchWidth": 2,
+      "damageScratchCount": 5,
+      "damageScratchDarkening": 40,
+      "damageScratchLightening": 40,
+      "damageSeed": 0,
+      "filmGateEnabled": false,
+      "filmGateRatio": 1.3333333333333333,
+      "filmGateCurvatureEnabled": true,
+      "filmGateCurvature": 0.08,
+      "filmGateSoftness": 0,
+      "filmGatePadding": 0,
+      "creativeEnabled": true
+    },
+    "AG200": {
+      "basicEnabled": true,
+      "exposure": 0,
+      "contrast": 1,
+      "highlights": 0,
+      "fade": 0,
+      "fadeRolloff": 0.5,
+      "temperature": 6500,
+      "tint": 0,
+      "skinBias": 0,
+      "saturation": 1,
+      "subtractiveSat": 1,
+      "richness": 0,
+      "bleachBypass": 0,
+      "colorBlend": 1,
+      "splitEnabled": false,
+      "splitMode": "natural",
+      "splitAmount": 0,
+      "splitHue": 35,
+      "splitPivot": 0.5,
+      "hslEnabled": true,
+      "hslHueRed": 11,
+      "hslSaturationRed": -37,
+      "hslLuminanceRed": 0,
+      "hslHueOrange": 2,
+      "hslSaturationOrange": -26,
+      "hslLuminanceOrange": 0,
+      "hslHueYellow": 2,
+      "hslSaturationYellow": -56,
+      "hslLuminanceYellow": 0,
+      "hslHueGreen": 2,
+      "hslSaturationGreen": -65,
+      "hslLuminanceGreen": 0,
+      "hslHueAqua": 0,
+      "hslSaturationAqua": -61,
+      "hslLuminanceAqua": 0,
+      "hslHueBlue": 0,
+      "hslSaturationBlue": -61,
+      "hslLuminanceBlue": 0,
+      "hslHuePurple": 4,
+      "hslSaturationPurple": -54,
+      "hslLuminancePurple": 0,
+      "hslHueMagenta": 10,
+      "hslSaturationMagenta": -37,
+      "hslLuminanceMagenta": 0,
+      "wheelsEnabled": true,
+      "lift_r": 0,
+      "lift_g": 0,
+      "lift_b": 0,
+      "gamma_r": 1,
+      "gamma_g": 1,
+      "gamma_b": 1,
+      "gain_r": 1,
+      "gain_g": 1,
+      "gain_b": 1,
+      "curvesEnabled": true,
+      "rgbCurve": [
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 1,
+          "y": 1
+        }
+      ],
+      "redCurve": [
+        {
+          "x": 0,
+          "y": 0.1152
+        },
+        {
+          "x": 0.06,
+          "y": 0.1511
+        },
+        {
+          "x": 0.14,
+          "y": 0.1993
+        },
+        {
+          "x": 0.25,
+          "y": 0.2958
+        },
+        {
+          "x": 0.4,
+          "y": 0.4432
+        },
+        {
+          "x": 0.6,
+          "y": 0.6274
+        },
+        {
+          "x": 0.8,
+          "y": 0.7898
+        },
+        {
+          "x": 1,
+          "y": 0.919
+        }
+      ],
+      "greenCurve": [
+        {
+          "x": 0,
+          "y": 0.0983
+        },
+        {
+          "x": 0.06,
+          "y": 0.1334
+        },
+        {
+          "x": 0.14,
+          "y": 0.1809
+        },
+        {
+          "x": 0.25,
+          "y": 0.2743
+        },
+        {
+          "x": 0.4,
+          "y": 0.4229
+        },
+        {
+          "x": 0.6,
+          "y": 0.6247
+        },
+        {
+          "x": 0.8,
+          "y": 0.7922
+        },
+        {
+          "x": 1,
+          "y": 0.941
+        }
+      ],
+      "blueCurve": [
+        {
+          "x": 0,
+          "y": 0.0847
+        },
+        {
+          "x": 0.06,
+          "y": 0.1147
+        },
+        {
+          "x": 0.14,
+          "y": 0.1551
+        },
+        {
+          "x": 0.25,
+          "y": 0.2384
+        },
+        {
+          "x": 0.4,
+          "y": 0.3941
+        },
+        {
+          "x": 0.6,
+          "y": 0.6177
+        },
+        {
+          "x": 0.8,
+          "y": 0.8077
+        },
+        {
+          "x": 1,
+          "y": 0.9707
+        }
+      ],
+      "luminanceCurve": [
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 1,
+          "y": 1
+        }
+      ],
+      "hueVsHueCurve": [
+        {
+          "x": 0,
+          "y": 0.5
+        },
+        {
+          "x": 1,
+          "y": 0.5
+        }
+      ],
+      "hueVsSaturationCurve": [
+        {
+          "x": 0,
+          "y": 0.5
+        },
+        {
+          "x": 1,
+          "y": 0.5
+        }
+      ],
+      "hueVsLuminanceCurve": [
+        {
+          "x": 0,
+          "y": 0.5
+        },
+        {
+          "x": 1,
+          "y": 0.5
+        }
+      ],
+      "filmEffectsEnabled": true,
+      "effectsBlend": 1,
+      "vignetteEnabled": false,
+      "vignetteAmount": 0.3,
+      "vignetteSize": 0.5,
+      "vignetteSoftness": 0.6,
+      "grainEnabled": true,
+      "grainAmount": 0.545,
+      "grainSize": 8,
+      "grainSoftness": 0.4,
+      "grainSaturation": 0,
+      "grainImageDefocus": 0.3165,
+      "grainApplyToBlack": false,
+      "flickerEnabled": false,
+      "flickerUp": 20,
+      "flickerDown": 30,
+      "flickerFrames": 70,
+      "flickerSeed": 0,
+      "damageEnabled": false,
+      "damageDustDiameter": 2,
+      "damageDustCount": 10,
+      "damageScratchWidth": 2,
+      "damageScratchCount": 5,
+      "damageScratchDarkening": 40,
+      "damageScratchLightening": 40,
+      "damageSeed": 0,
+      "filmGateEnabled": false,
+      "filmGateRatio": 1.3333333333333333,
+      "filmGateCurvatureEnabled": true,
+      "filmGateCurvature": 0.08,
+      "filmGateSoftness": 0,
+      "filmGatePadding": 0,
+      "creativeEnabled": true
+    },
+    "TX3200": {
+      "basicEnabled": true,
+      "exposure": 0,
+      "contrast": 1,
+      "highlights": 0,
+      "fade": 0,
+      "fadeRolloff": 0.5,
+      "temperature": 6500,
+      "tint": 0,
+      "skinBias": 0,
+      "saturation": 0,
+      "subtractiveSat": 1,
+      "richness": 0,
+      "bleachBypass": 0,
+      "colorBlend": 1,
+      "splitEnabled": false,
+      "splitMode": "natural",
+      "splitAmount": 0,
+      "splitHue": 35,
+      "splitPivot": 0.5,
+      "hslEnabled": true,
+      "hslHueRed": 0,
+      "hslSaturationRed": 0,
+      "hslLuminanceRed": 0,
+      "hslHueOrange": 0,
+      "hslSaturationOrange": 0,
+      "hslLuminanceOrange": 0,
+      "hslHueYellow": 0,
+      "hslSaturationYellow": 0,
+      "hslLuminanceYellow": 0,
+      "hslHueGreen": 0,
+      "hslSaturationGreen": 0,
+      "hslLuminanceGreen": 0,
+      "hslHueAqua": 0,
+      "hslSaturationAqua": 0,
+      "hslLuminanceAqua": 0,
+      "hslHueBlue": 0,
+      "hslSaturationBlue": 0,
+      "hslLuminanceBlue": 0,
+      "hslHuePurple": 0,
+      "hslSaturationPurple": 0,
+      "hslLuminancePurple": 0,
+      "hslHueMagenta": 0,
+      "hslSaturationMagenta": 0,
+      "hslLuminanceMagenta": 0,
+      "wheelsEnabled": true,
+      "lift_r": 0,
+      "lift_g": 0,
+      "lift_b": 0,
+      "gamma_r": 1,
+      "gamma_g": 1,
+      "gamma_b": 1,
+      "gain_r": 1,
+      "gain_g": 1,
+      "gain_b": 1,
+      "curvesEnabled": true,
+      "rgbCurve": [
+        {
+          "x": 0,
+          "y": 0.0685
+        },
+        {
+          "x": 0.06,
+          "y": 0.0725
+        },
+        {
+          "x": 0.14,
+          "y": 0.108
+        },
+        {
+          "x": 0.25,
+          "y": 0.2075
+        },
+        {
+          "x": 0.4,
+          "y": 0.3802
+        },
+        {
+          "x": 0.6,
+          "y": 0.6482
+        },
+        {
+          "x": 0.8,
+          "y": 0.8725
+        },
+        {
+          "x": 1,
+          "y": 0.9972
+        }
+      ],
+      "redCurve": [
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 1,
+          "y": 1
+        }
+      ],
+      "greenCurve": [
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 1,
+          "y": 1
+        }
+      ],
+      "blueCurve": [
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 1,
+          "y": 1
+        }
+      ],
+      "luminanceCurve": [
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 1,
+          "y": 1
+        }
+      ],
+      "hueVsHueCurve": [
+        {
+          "x": 0,
+          "y": 0.5
+        },
+        {
+          "x": 1,
+          "y": 0.5
+        }
+      ],
+      "hueVsSaturationCurve": [
+        {
+          "x": 0,
+          "y": 0.5
+        },
+        {
+          "x": 1,
+          "y": 0.5
+        }
+      ],
+      "hueVsLuminanceCurve": [
+        {
+          "x": 0,
+          "y": 0.5
+        },
+        {
+          "x": 1,
+          "y": 0.5
+        }
+      ],
+      "filmEffectsEnabled": true,
+      "effectsBlend": 1,
+      "vignetteEnabled": false,
+      "vignetteAmount": 0.3,
+      "vignetteSize": 0.5,
+      "vignetteSoftness": 0.6,
+      "grainEnabled": true,
+      "grainAmount": 0.748,
+      "grainSize": 8,
+      "grainSoftness": 0.3,
+      "grainSaturation": 0,
+      "grainImageDefocus": 0.6962,
+      "grainApplyToBlack": false,
+      "flickerEnabled": false,
+      "flickerUp": 20,
+      "flickerDown": 30,
+      "flickerFrames": 70,
+      "flickerSeed": 0,
+      "damageEnabled": false,
+      "damageDustDiameter": 2,
+      "damageDustCount": 10,
+      "damageScratchWidth": 2,
+      "damageScratchCount": 5,
+      "damageScratchDarkening": 40,
+      "damageScratchLightening": 40,
+      "damageSeed": 0,
+      "filmGateEnabled": false,
+      "filmGateRatio": 1.3333333333333333,
+      "filmGateCurvatureEnabled": true,
+      "filmGateCurvature": 0.08,
+      "filmGateSoftness": 0,
+      "filmGatePadding": 0,
+      "creativeEnabled": true
+    }
+  }
+}

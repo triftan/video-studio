@@ -1,0 +1,14 @@
+{
+  "name": "video-studio",
+  "description": "Video editing, motion graphics and explainer video skills for Claude Code.",
+  "owner": {
+    "name": "triftan"
+  },
+  "plugins": [
+    {
+      "name": "video-studio",
+      "source": "./plugins/video-studio",
+      "description": "Agent skills for video editing, motion graphics and explainer videos, with a library of caption, color, zoom, transition, effect and voice styles."
+    }
+  ]
+}

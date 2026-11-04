@@ -1,0 +1,14 @@
+{
+  "style": "clean-saas",
+  "format": "16:9",
+  "fps": 30,
+  "scenes": [
+    { "id": "hook", "type": "title", "vo": "Editing ten minutes of video can take four hours.", "durationInFrames": 90, "title": "4 hours", "subtitle": "to edit 10 minutes of footage" },
+    { "id": "problem", "type": "bullets", "vo": "Most of that time goes to cutting silences, fixing audio and adding captions.", "durationInFrames": 120, "title": "Where the time goes", "items": ["Cutting silences", "Fixing audio", "Adding captions"] },
+    { "id": "how", "type": "steps", "vo": "Now you upload, describe the edit, and review.", "durationInFrames": 110, "title": "How it works", "items": ["Upload", "Describe the edit", "Review"] },
+    { "id": "stat", "type": "stat", "vo": "Our test edit kept eighty one percent of viewers to the end.", "durationInFrames": 100, "value": 81, "unit": "%", "label": "average view duration in our test edit" },
+    { "id": "chart", "type": "chart", "vo": "Each step adds watch time.", "durationInFrames": 120, "title": "Watch time by step", "unit": "%", "bars": [{ "label": "Raw", "value": 31 }, { "label": "Cut silences", "value": 52 }, { "label": "Captions", "value": 68 }, { "label": "Zooms", "value": 81 }] },
+    { "id": "quote", "type": "quote", "vo": "Like having an editor on call.", "durationInFrames": 90, "quote": "Like having an editor on call.", "author": "Sample testimonial" },
+    { "id": "cta", "type": "cta", "vo": "Try it free today.", "durationInFrames": 90, "title": "Try it free", "url": "example.com" }
+  ]
+}

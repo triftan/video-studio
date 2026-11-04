@@ -1,0 +1,157 @@
+{
+  "_about": "Design styles for explainers and motion graphics: a palette, a font pairing, a short style guide and a matching caption preset.",
+  "styles": {
+    "clean-saas": {
+      "label": "Clean SaaS",
+      "colors": {
+        "background": "#F7F8FA",
+        "surface": "#FFFFFF",
+        "text": "#0E1116",
+        "muted": "#5B6472",
+        "accent": "#3D7BFF",
+        "accent2": "#14C38E"
+      },
+      "fonts": {
+        "heading": "Inter",
+        "headingWeight": "800",
+        "body": "Inter",
+        "bodyWeight": "500"
+      },
+      "captionPreset": "studio",
+      "style_guide": "Lots of white space, rounded 16px cards with soft shadows, UI screenshots in device frames. Motion: slide and fade, 10 to 14 frames, small stagger. One accent per scene."
+    },
+    "dark-tech": {
+      "label": "Dark Tech",
+      "colors": {
+        "background": "#0B0B0F",
+        "surface": "#15161C",
+        "text": "#F5F5F7",
+        "muted": "#8A8F98",
+        "accent": "#4DFFDF",
+        "accent2": "#7C5CFF"
+      },
+      "fonts": {
+        "heading": "Unbounded",
+        "headingWeight": "800",
+        "body": "Inter",
+        "bodyWeight": "500"
+      },
+      "captionPreset": "signal",
+      "style_guide": "Near-black backgrounds, glowing accent lines, grid textures at 4% opacity, monospace labels for numbers. Motion: snappy springs, glow pulses, scanline sweeps."
+    },
+    "editorial": {
+      "label": "Editorial",
+      "colors": {
+        "background": "#F4F1EA",
+        "surface": "#FFFFFF",
+        "text": "#16130F",
+        "muted": "#6F665B",
+        "accent": "#C8A96A",
+        "accent2": "#7A2E2E"
+      },
+      "fonts": {
+        "heading": "Playfair Display",
+        "headingWeight": "600",
+        "body": "Inter",
+        "bodyWeight": "500"
+      },
+      "captionPreset": "the-french-dispatch",
+      "style_guide": "Magazine layout: serif headlines, small uppercase kickers with wide tracking, thin rules, photos with generous margins. Motion: mask wipes and slow pushes, no bounce."
+    },
+    "playful-pop": {
+      "label": "Playful Pop",
+      "colors": {
+        "background": "#FFF4D6",
+        "surface": "#FFFFFF",
+        "text": "#1B1B1B",
+        "muted": "#6B5E4B",
+        "accent": "#FF4D8D",
+        "accent2": "#3BC9F5"
+      },
+      "fonts": {
+        "heading": "Rubik",
+        "headingWeight": "900",
+        "body": "Rubik",
+        "bodyWeight": "500"
+      },
+      "captionPreset": "bubble-pop",
+      "style_guide": "Chunky shapes, thick 4px outlines, flat colors, stickers and emoji-style icons. Motion: elastic pops with overshoot, wiggles on emphasis, confetti on wins."
+    },
+    "corporate-trust": {
+      "label": "Corporate Trust",
+      "colors": {
+        "background": "#FFFFFF",
+        "surface": "#F2F5F9",
+        "text": "#0B2545",
+        "muted": "#58677A",
+        "accent": "#1360E2",
+        "accent2": "#F2A541"
+      },
+      "fonts": {
+        "heading": "Montserrat",
+        "headingWeight": "700",
+        "body": "Open Sans",
+        "bodyWeight": "500"
+      },
+      "captionPreset": "white-card",
+      "style_guide": "Navy and blue, clean icons, charts with clear labels and sources. Motion: calm ease-out, no overshoot, 12 to 16 frame entrances."
+    },
+    "warm-story": {
+      "label": "Warm Story",
+      "colors": {
+        "background": "#2A1E17",
+        "surface": "#3A2A20",
+        "text": "#FBEFE3",
+        "muted": "#C7AE98",
+        "accent": "#FF9F5A",
+        "accent2": "#E8C07D"
+      },
+      "fonts": {
+        "heading": "Fraunces",
+        "headingWeight": "700",
+        "body": "Nunito",
+        "bodyWeight": "600"
+      },
+      "captionPreset": "orange-echo",
+      "style_guide": "Documentary feel: warm grade, film grain, hand-drawn underlines, archival photos with slow Ken Burns. Motion: gentle drifts and dissolves."
+    },
+    "bold-creator": {
+      "label": "Bold Creator",
+      "colors": {
+        "background": "#111111",
+        "surface": "#1E1E1E",
+        "text": "#FFFFFF",
+        "muted": "#A0A0A0",
+        "accent": "#FFE100",
+        "accent2": "#FF3B30"
+      },
+      "fonts": {
+        "heading": "Anton",
+        "headingWeight": "400",
+        "body": "Inter",
+        "bodyWeight": "700"
+      },
+      "captionPreset": "yellow-impact",
+      "style_guide": "Huge condensed uppercase type, yellow highlights, hard cuts, punch-in zooms on key words. Motion: fast (6 to 8 frame) snaps, impact shakes on numbers."
+    },
+    "edu-chalk": {
+      "label": "Edu Chalk",
+      "colors": {
+        "background": "#1F3B2D",
+        "surface": "#264A38",
+        "text": "#F1F5EE",
+        "muted": "#B7C9BC",
+        "accent": "#FFD166",
+        "accent2": "#EF8354"
+      },
+      "fonts": {
+        "heading": "Patrick Hand",
+        "headingWeight": "400",
+        "body": "Nunito",
+        "bodyWeight": "600"
+      },
+      "captionPreset": "plain",
+      "style_guide": "Chalkboard teaching style: hand-drawn diagrams that draw on, arrows and circles for emphasis, step numbering. Motion: stroke draw-ons and simple fades, one idea per scene."
+    }
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "_about": "Voiceover scripts for the showcase videos. build_showcase.py turns each line into a voice clip plus word timings, then writes public/showcase/<video>.json for Remotion.",
+  "videos": {
+    "main": {
+      "voice": "af_heart",
+      "speed": 1.0,
+      "scenes": [
+        { "id": "hook",      "minSeconds": 4.5, "vo": "Ten minutes of footage. Four hours of editing. That used to be normal." },
+        { "id": "kinetic",   "minSeconds": 3.0, "vo": "Then A.I. video editing changed the math." },
+        { "id": "timeline",  "minSeconds": 6.5, "vo": "It reads your transcript, finds the pauses, the filler words and the retakes, and cuts them in seconds." },
+        { "id": "polish",    "minSeconds": 5.0, "vo": "While you watch, it tightens the pacing, cleans up the audio, and adds captions." },
+        { "id": "captions",  "minSeconds": 6.0, "vo": "Captions come in any style. Loud for TikTok, clean for YouTube, elegant for brands." },
+        { "id": "workflow",  "minSeconds": 5.0, "vo": "The workflow is simple. Upload your footage, describe the edit in plain words, then review." },
+        { "id": "overlays",  "minSeconds": 5.5, "vo": "Motion graphics land right on your footage. Name titles, callouts, and your handle." },
+        { "id": "plan",      "minSeconds": 5.0, "vo": "It even helps you plan what to film, and when to post it." },
+        { "id": "chapter2",  "minSeconds": 2.4, "vo": "So what changes?" },
+        { "id": "line",      "minSeconds": 4.5, "vo": "Tighter edits tend to hold attention longer." },
+        { "id": "donut",     "minSeconds": 5.0, "vo": "Most editing time goes to repetitive work. Exactly what A.I. is good at." },
+        { "id": "bars",      "minSeconds": 4.0, "vo": "And every step adds up." },
+        { "id": "quote",     "minSeconds": 4.5, "vo": "Because the best edit is the one nobody notices." },
+        { "id": "chapter3",  "minSeconds": 2.4, "vo": "Now, make it yours." },
+        { "id": "styles",    "minSeconds": 8.0, "vo": "Pick a design style and every graphic follows it. Clean, dark, editorial, playful, and more." },
+        { "id": "titles",    "minSeconds": 5.0, "vo": "Titles can glow, or they can whisper." },
+        { "id": "promo",     "minSeconds": 7.5, "vo": "Upload. Describe the edit. Post in minutes." },
+        { "id": "countdown", "minSeconds": 4.2, "vo": "Ready? Three. Two. One." },
+        { "id": "logo",      "minSeconds": 3.5, "vo": "Video Studio. Built for creators." },
+        { "id": "end",       "minSeconds": 6.0, "vo": "Thanks for watching. Subscribe for more." }
+      ]
+    },
+    "captions": {
+      "voice": "am_michael",
+      "speed": 1.05,
+      "scenes": [
+        { "id": "intro",      "preset": "tiktok",              "minSeconds": 3.0, "vo": "One video. Eight caption styles. Watch." },
+        { "id": "submagic",   "preset": "submagic",            "minSeconds": 2.8, "vo": "This one stacks every line, and lights up the active one." },
+        { "id": "netflix",    "preset": "netflix",             "minSeconds": 2.8, "vo": "This one stays out of the way, like a movie." },
+        { "id": "bubble",     "preset": "bubble-pop",          "minSeconds": 2.8, "vo": "This one pops, word by word, comic style." },
+        { "id": "luxe",       "preset": "luxe",                "minSeconds": 2.8, "vo": "This one feels expensive. Gold serif on a dark band." },
+        { "id": "signal",     "preset": "signal",              "minSeconds": 2.8, "vo": "This one is built for tech. Uppercase, with a neon highlight." },
+        { "id": "product",    "preset": "product",             "minSeconds": 2.8, "vo": "This one is for product launches. Bright and confident." },
+        { "id": "dispatch",   "preset": "the-french-dispatch", "minSeconds": 2.8, "vo": "And this one reads like a magazine." },
+        { "id": "outro",      "preset": "yellow-impact",       "minSeconds": 3.0, "vo": "Thirty two styles. One line of code to switch." }
+      ]
+    },
+    "styles": {
+      "voice": "bf_emma",
+      "speed": 1.0,
+      "scenes": [
+        { "id": "clean-saas",      "style": "clean-saas",      "minSeconds": 3.2, "vo": "Clean SaaS. White space, soft cards, one bright accent." },
+        { "id": "dark-tech",       "style": "dark-tech",       "minSeconds": 3.2, "vo": "Dark tech. Near black, with glowing cyan." },
+        { "id": "editorial",       "style": "editorial",       "minSeconds": 3.2, "vo": "Editorial. Serif headlines and warm paper." },
+        { "id": "playful-pop",     "style": "playful-pop",     "minSeconds": 3.2, "vo": "Playful pop. Chunky type and candy colours." },
+        { "id": "corporate-trust", "style": "corporate-trust", "minSeconds": 3.2, "vo": "Corporate trust. Navy, calm, and clear." },
+        { "id": "warm-story",      "style": "warm-story",      "minSeconds": 3.2, "vo": "Warm story. A documentary feel." },
+        { "id": "bold-creator",    "style": "bold-creator",    "minSeconds": 3.2, "vo": "Bold creator. Huge type, loud yellow." },
+        { "id": "edu-chalk",       "style": "edu-chalk",       "minSeconds": 3.2, "vo": "And edu chalk, for teaching." }
+      ]
+    }
+  }
+}

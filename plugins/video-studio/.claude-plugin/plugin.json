@@ -1,0 +1,19 @@
+{
+  "name": "video-studio",
+  "version": "0.2.0",
+  "description": "Edit videos, build motion graphics and make explainer videos with an agent. One-time setup, Fish Audio voiceovers, 24 Remotion templates, an offline style catalog and a style library (32 caption presets, 8 design styles, color grades, zooms, transitions, effects, voices).",
+  "author": {
+    "name": "triftan"
+  },
+  "keywords": [
+    "video",
+    "editing",
+    "motion-graphics",
+    "remotion",
+    "ffmpeg",
+    "captions",
+    "explainer"
+  ],
+  "license": "MIT",
+  "repository": "https://github.com/triftan/video-studio"
+}

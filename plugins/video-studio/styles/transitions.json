@@ -1,0 +1,185 @@
+{
+  "_about": "Video transitions catalog with parameters. Shader code is not included.",
+  "transitions": [
+    {
+      "id": "builtin:transition-anticipation-zoom",
+      "name": "Anticipation Zoom",
+      "description": "Outgoing clip winds back then punches forward with a directional stretch blur as the incoming clip eases in from a zoomed-out scale.",
+      "properties": []
+    },
+    {
+      "id": "builtin:transition-clean-line-wipe",
+      "name": "Clean Line Wipe",
+      "description": "A clean directional wipe with a thin sweeping line dividing the outgoing and incoming clips.",
+      "properties": []
+    },
+    {
+      "id": "builtin:transition-cross-dissolve",
+      "name": "Cross Dissolve",
+      "description": "Smoothly blends the outgoing clip into the incoming clip with an adjustable easing curve.",
+      "properties": []
+    },
+    {
+      "id": "builtin:transition-dip-to-black",
+      "name": "Dip to Black",
+      "description": "Fades the outgoing clip to black, holds, then fades up the incoming clip.",
+      "properties": []
+    },
+    {
+      "id": "builtin:transition-flash",
+      "name": "Flash",
+      "description": "Flashes to a solid color at the midpoint with an overexposure bloom, switching from the outgoing to incoming clip behind the flash.",
+      "properties": []
+    },
+    {
+      "id": "builtin:transition-frei0r-blend",
+      "name": "blend",
+      "description": "Perform a blend operation between two sources",
+      "properties": []
+    },
+    {
+      "id": "builtin:transition-frei0r-push-down",
+      "name": "push-down",
+      "description": "Push from top to bottom",
+      "properties": []
+    },
+    {
+      "id": "builtin:transition-frei0r-push-left",
+      "name": "push-left",
+      "description": "Push from right to left",
+      "properties": []
+    },
+    {
+      "id": "builtin:transition-frei0r-push-right",
+      "name": "push-right",
+      "description": "Push from left to right",
+      "properties": []
+    },
+    {
+      "id": "builtin:transition-frei0r-push-up",
+      "name": "push-up",
+      "description": "Push from bottom to top",
+      "properties": []
+    },
+    {
+      "id": "builtin:transition-frei0r-slide-down",
+      "name": "slide-down",
+      "description": "Slide from top to bottom",
+      "properties": []
+    },
+    {
+      "id": "builtin:transition-frei0r-slide-left",
+      "name": "slide-left",
+      "description": "Slide from right to left",
+      "properties": []
+    },
+    {
+      "id": "builtin:transition-frei0r-slide-right",
+      "name": "slide-right",
+      "description": "Slide from left to right",
+      "properties": []
+    },
+    {
+      "id": "builtin:transition-frei0r-slide-up",
+      "name": "slide-up",
+      "description": "Slide from bottom to top",
+      "properties": []
+    },
+    {
+      "id": "builtin:transition-frei0r-wipe-barn-door-h",
+      "name": "wipe-barn-door-h",
+      "description": "Horizontal barn door wipe",
+      "properties": []
+    },
+    {
+      "id": "builtin:transition-frei0r-wipe-barn-door-v",
+      "name": "wipe-barn-door-v",
+      "description": "Vertical barn door wipe",
+      "properties": []
+    },
+    {
+      "id": "builtin:transition-frei0r-wipe-circle",
+      "name": "wipe-circle",
+      "description": "Circle wipe",
+      "properties": []
+    },
+    {
+      "id": "builtin:transition-frei0r-wipe-down",
+      "name": "wipe-down",
+      "description": "Wipe from top to bottom",
+      "properties": []
+    },
+    {
+      "id": "builtin:transition-frei0r-wipe-left",
+      "name": "wipe-left",
+      "description": "Wipe from right to left",
+      "properties": []
+    },
+    {
+      "id": "builtin:transition-frei0r-wipe-rect",
+      "name": "wipe-rect",
+      "description": "Rectangular wipe",
+      "properties": []
+    },
+    {
+      "id": "builtin:transition-frei0r-wipe-right",
+      "name": "wipe-right",
+      "description": "Wipe from left to right",
+      "properties": []
+    },
+    {
+      "id": "builtin:transition-frei0r-wipe-up",
+      "name": "wipe-up",
+      "description": "Wipe from bottom to top",
+      "properties": []
+    },
+    {
+      "id": "builtin:transition-frei0r-xfade0r",
+      "name": "xfade0r",
+      "description": "a simple xfader",
+      "properties": []
+    },
+    {
+      "id": "builtin:transition-impact-shake",
+      "name": "Impact Shake",
+      "description": "Punches in with a shake, RGB split and flash at the cut point, simulating a physical impact or beat hit.",
+      "properties": []
+    },
+    {
+      "id": "builtin:transition-luma-blend",
+      "name": "Luma Blend",
+      "description": "Luminance-based blend that crossfades clips while boosting bright areas, morphing between screen and additive blending.",
+      "properties": []
+    },
+    {
+      "id": "builtin:transition-organic-dissolve",
+      "name": "Organic Light Dissolve",
+      "description": "Dissolves the outgoing clip through an organic fbm-noise blob edge with a glowing burn-up rim revealing the incoming clip.",
+      "properties": []
+    },
+    {
+      "id": "builtin:transition-page-curl",
+      "name": "Page Curl",
+      "description": "The outgoing clip peels and curls away like a turning page, revealing the incoming clip with paper grain, shadows and a glossy specular edge.",
+      "properties": []
+    },
+    {
+      "id": "builtin:transition-rack-focus",
+      "name": "Rack Focus",
+      "description": "Defocuses the outgoing clip into a soft bokeh blur, then refocuses to reveal the incoming clip with chromatic aberration and veiling glare.",
+      "properties": []
+    },
+    {
+      "id": "builtin:transition-soft-wipe",
+      "name": "Soft Wipe",
+      "description": "Outgoing clip wipes off horizontally with a feathered, soft edge and a subtle parallax shift as the incoming clip slides in.",
+      "properties": []
+    },
+    {
+      "id": "builtin:transition-whip-pan",
+      "name": "Whip Pan",
+      "description": "Simulates a fast camera whip pan: clip A smears out to one side with motion blur while clip B whips in from the other and settles with an elastic overshoot.",
+      "properties": []
+    }
+  ]
+}
