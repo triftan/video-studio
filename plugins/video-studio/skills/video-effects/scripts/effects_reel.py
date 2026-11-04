@@ -55,6 +55,13 @@ def label_layer(W, H, i, total, name, info):
     return np.asarray(im).astype(np.float32) / 255
 
 
+for _stream in (sys.stdout, sys.stderr):
+    try:
+        _stream.reconfigure(encoding="utf-8", errors="replace")
+    except Exception:
+        pass
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("clip")

@@ -101,7 +101,7 @@ def main():
 
     kokoro = Kokoro(os.path.join(a.kokoro_dir, "kokoro-v1.0.onnx"), os.path.join(a.kokoro_dir, "voices-v1.0.bin"))
     whisper = WhisperModel("base.en", compute_type="int8")
-    script = json.load(open(os.path.join(HERE, "script.json")))["videos"]
+    script = json.load(open(os.path.join(HERE, "script.json"), encoding="utf-8"))["videos"]
     os.makedirs(os.path.join(OUT, "vo"), exist_ok=True)
 
     for vid, spec in script.items():
@@ -126,7 +126,7 @@ def main():
         music = f"showcase/music-{vid}.wav"
         make_music(os.path.join(ROOT, "public", music), start / a.fps + 1)
         json.dump({"fps": a.fps, "durationInFrames": start, "music": music, "scenes": scenes},
-                  open(os.path.join(OUT, f"{vid}.json"), "w"), indent=1)
+                  open(os.path.join(OUT, f"{vid}.json"), "w", encoding="utf-8"), indent=1)
         print(f"== {vid}: {start / a.fps:.1f}s, {len(scenes)} scenes")
 
 

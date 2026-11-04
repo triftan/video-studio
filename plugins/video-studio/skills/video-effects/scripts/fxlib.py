@@ -290,7 +290,7 @@ def lightning(rng, a, b, jag=18, depth=5):
 
 def load_cube(path):
     size, rows = None, []
-    for line in open(path):
+    for line in open(path, encoding="utf-8"):
         s = line.strip()
         if s.startswith("LUT_3D_SIZE"):
             size = int(s.split()[1])

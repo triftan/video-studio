@@ -63,7 +63,7 @@ def main():
     ap.add_argument("--list", action="store_true")
     a = ap.parse_args()
     if a.list:
-        cat = {e["name"]: e.get("description", "") for e in json.load(open(STYLES / "audio-effects.json"))["effects"]}
+        cat = {e["name"]: e.get("description", "") for e in json.load(open(STYLES / "audio-effects.json", encoding="utf-8"))["effects"]}
         for k, v in CHAINS.items():
             print(f"{k:24s} {cat.get(k, '')[:90]}")
         print("\nCrossfades between clips: see transitions.py --list")

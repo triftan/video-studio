@@ -67,7 +67,7 @@ def main():
     a = ap.parse_args()
 
     if a.list:
-        cat = {t["name"]: t.get("description", "") for t in json.load(open(STYLES / "transitions.json"))["transitions"]}
+        cat = {t["name"]: t.get("description", "") for t in json.load(open(STYLES / "transitions.json", encoding="utf-8"))["transitions"]}
         for k, v in XFADE.items():
             print(f"{k:24s} ffmpeg:{v:11s} {cat.get(k, '')[:80]}")
         print("\naudio crossfades:", ", ".join(ACURVE))

@@ -14,11 +14,11 @@ _BANDS = {"Red": 0, "Orange": 15, "Yellow": 30, "Green": 60, "Aqua": 90, "Blue":
 
 
 def color_presets():
-    return json.load(open(STYLES / "color-presets.json"))["presets"]
+    return json.load(open(STYLES / "color-presets.json", encoding="utf-8"))["presets"]
 
 
 def zoom_presets():
-    return {z["id"]: z for z in json.load(open(STYLES / "zoom-presets.json"))["presets"]}
+    return {z["id"]: z for z in json.load(open(STYLES / "zoom-presets.json", encoding="utf-8"))["presets"]}
 
 
 def _curve_lut(points):
@@ -110,7 +110,7 @@ def grade(img, p, frame_index=0, strength=1.0):
 
 def load_cube(path):
     size, rows = None, []
-    for line in open(path):
+    for line in open(path, encoding="utf-8"):
         s = line.strip()
         if s.startswith("LUT_3D_SIZE"):
             size = int(s.split()[1])

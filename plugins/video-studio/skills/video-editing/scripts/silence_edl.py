@@ -68,7 +68,7 @@ def main():
             merged.append(seg)
 
     edl = [{"src": a.input, "in": round(i, 3), "out": round(o, 3), "note": "speech"} for i, o in merged]
-    json.dump(edl, open(a.output, "w"), indent=2)
+    json.dump(edl, open(a.output, "w", encoding="utf-8"), indent=2)
     kept = sum(o - i for i, o in merged)
     print(f"{len(edl)} segments, kept {kept:.1f}s of {total:.1f}s ({100 * kept / total:.0f}%) -> {a.output}")
 

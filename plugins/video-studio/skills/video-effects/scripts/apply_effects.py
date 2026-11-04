@@ -48,7 +48,7 @@ WORK_SHORT_SIDE = 720  # effects are tuned for this; larger video is processed a
 
 # ---------------------------------------------------------------- catalog
 def effect_catalog():
-    meta = {e["name"]: e for e in json.load(open(looks.STYLES / "pixel-effects.json"))["effects"]}
+    meta = {e["name"]: e for e in json.load(open(looks.STYLES / "pixel-effects.json", encoding="utf-8"))["effects"]}
     out = {}
     for name, fn in fxlib.EFFECTS.items():
         src = inspect.getsource(fn)
@@ -171,6 +171,13 @@ def parse_spec(spec, kind, duration):
     return {"type": kind, "name": name.strip(), "start": start, "end": min(end, duration), "strength": strength}
 
 
+for _stream in (sys.stdout, sys.stderr):
+    try:
+        _stream.reconfigure(encoding="utf-8", errors="replace")
+    except Exception:
+        pass
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("input", nargs="?")
@@ -212,7 +219,7 @@ def main():
     for kind, specs in (("fx", a.fx), ("zoom", a.zoom), ("grade", a.grade), ("lut", a.lut)):
         ops += [parse_spec(s, kind, duration) for s in specs]
     if a.plan:
-        for o in json.load(open(a.plan)):
+        for o in json.load(open(a.plan, encoding="utf-8")):
             o.setdefault("start", 0)
             o["end"] = duration if o.get("end") in (None, "end") else min(float(o["end"]), duration)
             o.setdefault("strength", 1.0)

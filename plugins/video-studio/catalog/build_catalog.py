@@ -61,6 +61,13 @@ def build_data():
                 grades=grades, zoom=st("zoom-presets.json")["presets"], transitions=tr, effects=eff, audio=aud, voices=st("voices.json")["voices"], kits=st("style-kits.json")["kits"])
 
 
+for _stream in (sys.stdout, sys.stderr):
+    try:
+        _stream.reconfigure(encoding="utf-8", errors="replace")
+    except Exception:
+        pass
+
+
 def main():
     page = open(os.path.join(HERE, "template.html"), encoding="utf-8").read()
     data = "window.CATALOG=" + json.dumps(build_data(), ensure_ascii=False, separators=(",", ":")) + ";"

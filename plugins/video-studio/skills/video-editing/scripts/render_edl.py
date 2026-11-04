@@ -31,7 +31,7 @@ def main():
     ap.add_argument("--preview", action="store_true", help="fast low-res render")
     a = ap.parse_args()
 
-    edl = json.load(open(a.edl))
+    edl = json.load(open(a.edl, encoding="utf-8"))
     if not edl:
         raise SystemExit("empty EDL")
     w, h = (int(x) for x in a.size.lower().split("x"))

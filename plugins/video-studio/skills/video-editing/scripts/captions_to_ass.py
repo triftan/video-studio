@@ -70,15 +70,15 @@ def main():
     ap.add_argument("-o", "--output", default="captions.ass")
     a = ap.parse_args()
 
-    presets = json.load(open(a.presets_file))["presets"]
+    presets = json.load(open(a.presets_file, encoding="utf-8"))["presets"]
     if a.preset not in presets:
         raise SystemExit(f"unknown preset {a.preset}. Options: {', '.join(presets)}")
     p = presets[a.preset]
     w, h = (int(x) for x in a.size.lower().split("x"))
     vertical = h > w
-    words = json.load(open(a.words))
+    words = json.load(open(a.words, encoding="utf-8"))
     if a.edl:
-        words = remap(words, json.load(open(a.edl)))
+        words = remap(words, json.load(open(a.edl, encoding="utf-8")))
 
     font_px = round(p.get("fontSize", 0.05) * h * (1.0 if vertical else 1.15))
     per_page = a.words_per_page or p.get("wordsPerPage") or (3 if vertical else 6)
