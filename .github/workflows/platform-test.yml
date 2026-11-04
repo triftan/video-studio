@@ -1,0 +1,71 @@
+name: Platform test
+
+# Installs the plugin's dependencies from scratch with the student bootstrap, then runs a real
+# editing session (cuts, captions, face-tracking effects, grades, transitions, audio, Remotion renders).
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, macos-latest, ubuntu-latest]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Bootstrap (macOS / Linux)
+        if: runner.os != 'Windows'
+        shell: bash
+        run: sh plugins/video-studio/scripts/bootstrap.sh --install
+
+      - name: Bootstrap (Windows)
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: powershell -ExecutionPolicy Bypass -File plugins\video-studio\scripts\bootstrap.ps1 -Install
+
+      - name: Bootstrap check mode reports nothing missing (macOS / Linux)
+        if: runner.os != 'Windows'
+        shell: bash
+        run: sh plugins/video-studio/scripts/bootstrap.sh
+
+      - name: Bootstrap check mode reports nothing missing (Windows)
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: powershell -ExecutionPolicy Bypass -File plugins\video-studio\scripts\bootstrap.ps1
+
+      - name: Session hook (Git Bash sh on Windows)
+        shell: bash
+        run: sh plugins/video-studio/hooks/check-setup.sh | head -3
+
+      - name: Smoke test (macOS / Linux)
+        if: runner.os != 'Windows'
+        shell: bash
+        run: ~/.video-studio/venv/bin/python tests/smoke_test.py
+
+      - name: Smoke test (Windows)
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          $env:Path = [Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [Environment]::GetEnvironmentVariable("Path","User")
+          & "$HOME\.video-studio\venv\Scripts\python.exe" tests\smoke_test.py
+
+      - name: Hook is silent after setup
+        shell: bash
+        run: test -z "$(sh plugins/video-studio/hooks/check-setup.sh)"
+
+      - name: Upload outputs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: outputs-${{ matrix.os }}
+          path: |
+            tests/out/*.png
+            tests/out/*.ass
+            tests/out/captioned.mp4
+          if-no-files-found: ignore
